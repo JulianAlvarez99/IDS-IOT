@@ -76,3 +76,6 @@ dependencies:
     # Herramientas de desarrollo
     - black
     - isort
+    
+    # Utilidad para monitoreo de GPU (aunque no se usará en este entorno CPU-only, es útil para scripts de entrenamiento en HPC)
+    - gputil
