@@ -1,23 +1,15 @@
 # =============================================================================
-# Entorno Conda: ids-iot-train  (Servidor HPC - Linux)
+# Entorno Conda: ids-iot-train  (Servidor HPC - Windows)
 # Proyecto: Módulo de Detección para IDS Pasivo
 #
-# Propósito : Entrenamiento completo del modelo TCN con aceleración GPU.
-#             También utilizable para compresión (Hito 4).
-# Hardware  : GPU NVIDIA — requiere CUDA 11.8 y cuDNN 8.6 instalados en el host.
-# Python    : 3.11.x
+# Propósito : Entrenamiento completo del modelo TCN con aceleración GPU nativa.
+# Hardware  : GPU NVIDIA en Servidor Windows. 
+#             Requiere CUDA Toolkit 11.2 y cuDNN 8.1 instalados en el host.
+# Python    : 3.10.x
 #
 # Decisión de versiones:
-#   - Python 3.11: sincronizado con entorno local Windows (ids-iot-dev).
-#   - TF 2.14: última versión con Keras v2 integrado, requerido por hls4ml.
-#              TF 2.14 es compatible con CUDA 11.8 / cuDNN 8.6.
-#
-# Prerequisitos en el servidor:
-#   - CUDA Toolkit 11.8:  https://developer.nvidia.com/cuda-11-8-0-download-archive
-#   - cuDNN 8.6:          https://developer.nvidia.com/rdp/cudnn-archive
-#   - Verificar con:      nvidia-smi  &&  nvcc --version
-#
-# IMPORTANTE: Mantener Python y TensorFlow sincronizados con environment.yml.
+#   - Python 3.10: Máxima estabilidad con TensorFlow 2.10 en Windows.
+#   - TF 2.10: Última versión con soporte nativo de GPU en Windows (sin WSL).
 # =============================================================================
 
 name: ids-iot-train
@@ -28,43 +20,40 @@ channels:
 
 dependencies:
   # ── Core ────────────────────────────────────────────────────────────────────
-  - python=3.11
+  - python=3.10
   - pip
 
-  # ── Entorno Jupyter ──────────────────────────────────────────────────────────
+  # ── Entorno Jupyter ─────────────────────────────────────────────────────────
   - ipykernel
   - jupyterlab>=4.0
 
-  # ── Manipulación de datos ────────────────────────────────────────────────────
-  - numpy>=1.23.5,<2.0.0
+  # ── Manipulación de datos ───────────────────────────────────────────────────
+  - numpy>=1.21.5,<1.24.0 # Limitado para evitar conflictos de binarios con TF 2.10
   - pandas>=2.0.3
   - pyarrow>=12.0.0
   - tqdm
 
-  # ── ML clásico ───────────────────────────────────────────────────────────────
+  # ── ML clásico ──────────────────────────────────────────────────────────────
   - scikit-learn>=1.3.0
   - joblib>=1.3.0
 
-  # ── Feature Importance y Explicabilidad (SHAP/XGBoost) ──
+  # ── Feature Importance y Explicabilidad (SHAP/XGBoost) ──────────────────────
   - xgboost>=2.0.0
   - shap>=0.43.0
 
-  # ── Visualización ────────────────────────────────────────────────────────────
+  # ── Visualización ───────────────────────────────────────────────────────────
   - matplotlib>=3.7.0
   - seaborn>=0.12.0
 
-  # ── Instalados vía pip ───────────────────────────────────────────────────────
+  # ── Instalados vía pip ──────────────────────────────────────────────────────
   - pip:
-    # TF 2.14 con soporte GPU para Linux.
-    # Compatible con CUDA 11.8 y cuDNN 8.6.
-    # Misma versión que el entorno local para garantizar compatibilidad
-    # de artefactos (.keras, .joblib) entre ambos entornos.
-    - tensorflow==2.14.0
+    # TF 2.10 con soporte GPU nativo para Windows.
+    - tensorflow==2.10.0
 
-    # Capa TCN — misma versión que el entorno local
+    # Capa TCN 
     - keras-tcn==3.5.0
 
-    # QKeras — misma versión que el entorno local
+    # QKeras: Quantization-Aware Training (QAT)
     - qkeras==0.9.0
 
     # Rebalanceo de clases
@@ -77,5 +66,5 @@ dependencies:
     - black
     - isort
     
-    # Utilidad para monitoreo de GPU (aunque no se usará en este entorno CPU-only, es útil para scripts de entrenamiento en HPC)
+    # Utilidad para monitoreo de uso de la GPU durante el entrenamiento
     - gputil

@@ -1,19 +1,16 @@
 # =============================================================================
-# Entorno Conda: ids-iot-dev  (Local - Windows)
+# Entorno Conda: ids-iot-dev  (Local - Windows 11)
 # Proyecto: Módulo de Detección para IDS Pasivo
 #
 # Propósito : Edición de código, análisis exploratorio (EDA), prototipado
-#             liviano y validación de pipelines sin entrenamiento.
-# Hardware  : CPU-only. El entrenamiento con GPU se ejecuta en Linux HPC.
-# Python    : 3.11.x
+#             liviano y validación de pipelines. 
+# Hardware  : Soporte nativo de GPU en Windows (requiere CUDA 11.2 y cuDNN 8.1).
+# Python    : 3.10.x
 #
 # Decisión de versiones:
-#   - Python 3.11: óptimo en estabilidad para el stack TF + QKeras + keras-tcn.
-#   - TF 2.14: última versión con Keras v2 integrado, requerido por el
-#              conversor hls4ml (Hito 5). TF 2.15+ separa Keras en paquete
-#              independiente (v3) e incompatibiliza con hls4ml keras_to_hls.
-#
-# IMPORTANTE: Mantener Python y TensorFlow sincronizados con environment_hpc.yml.
+#   - Python 3.10: Requerido por máxima compatibilidad con TensorFlow 2.10.
+#   - TF 2.10: Última versión con soporte nativo de GPU en Windows (sin WSL2).
+#              Sigue integrando Keras v2, compatible con hls4ml.
 # =============================================================================
 
 name: ids-iot-dev
@@ -24,56 +21,52 @@ channels:
 
 dependencies:
   # ── Core ────────────────────────────────────────────────────────────────────
-  - python=3.11
+  - python=3.10
   - pip
 
-  # ── Entorno Jupyter ──────────────────────────────────────────────────────────
+  # ── Entorno Jupyter ─────────────────────────────────────────────────────────
   - ipykernel          # Kernel para Jupyter/VS Code
   - jupyterlab>=4.0
 
-  # ── Manipulación de datos ────────────────────────────────────────────────────
-  # numpy: <2.0 por compatibilidad binaria con TF 2.14
-  - numpy>=1.23.5,<2.0.0
+  # ── Manipulación de datos ───────────────────────────────────────────────────
+  - numpy>=1.21.5,<1.24.0 # Límite superior para evitar conflictos con TF 2.10
   - pandas>=2.0.3
-  - pyarrow>=12.0.0    # Lectura/escritura de .feather (formato binario rápido)
-  - tqdm               # Barras de progreso
+  - pyarrow>=12.0.0    
+  - tqdm               
 
-  # ── ML clásico ───────────────────────────────────────────────────────────────
+  # ── ML clásico ──────────────────────────────────────────────────────────────
   - scikit-learn>=1.3.0
-  - joblib>=1.3.0      # Serialización de artefactos (scaler, label encoder)
+  - joblib>=1.3.0      
 
-  # ── Feature Importance y Explicabilidad (SHAP/XGBoost) ──
+  # ── Feature Importance y Explicabilidad (SHAP/XGBoost) ──────────────────────
   - xgboost>=2.0.0
   - shap>=0.43.0
 
-  # ── Visualización ────────────────────────────────────────────────────────────
+  # ── Visualización ───────────────────────────────────────────────────────────
   - matplotlib>=3.7.0
   - seaborn>=0.12.0
 
-  # ── Herramientas de desarrollo ───────────────────────────────────────────────
-  - black              # Formateador PEP 8
-  - isort              # Ordenador de imports
-  - mypy               # Verificador de tipos estáticos
+  # ── Herramientas de desarrollo ──────────────────────────────────────────────
+  - black              
+  - isort              
+  - mypy               
 
-  # ── Instalados vía pip ───────────────────────────────────────────────────────
+  # ── Instalados vía pip ──────────────────────────────────────────────────────
   - pip:
-    # TF 2.14 CPU: última versión con Keras v2 integrado.
-    # Requerido para compatibilidad con el conversor keras_to_hls de hls4ml
-    # (Hito 5). Versiones >=2.15 separan Keras como paquete independiente (v3)
-    # e incompatibizan con el conversor maduro de hls4ml.
-    - tensorflow-cpu==2.14.0
+    # TF 2.10: Última versión con soporte nativo de GPU en Windows.
+    - tensorflow==2.10.0
 
     # Capa TCN para Keras Sequential/Functional API
     - keras-tcn==3.5.0
 
-    # QKeras: Quantization-Aware Training (QAT) — Hito 4
+    # QKeras: Quantization-Aware Training (QAT)
     - qkeras==0.9.0
 
-    # Rebalanceo de clases (SMOTE y variantes) — Hito 3
+    # Rebalanceo de clases (SMOTE y variantes)
     - imbalanced-learn==0.11.0
 
-    # Descarga del dataset CIC-IoT-2023 desde Kaggle con caché
+    # Descarga del dataset CIC-IoT-2023 desde Kaggle
     - kagglehub
 
-    # Utilidad para monitoreo de GPU (aunque no se usará en este entorno CPU-only, es útil para scripts de entrenamiento en HPC)
+    # Utilidad para monitoreo de GPU
     - gputil
