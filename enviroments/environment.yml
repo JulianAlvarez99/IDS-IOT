@@ -70,3 +70,6 @@ dependencies:
 
     # Utilidad para monitoreo de GPU
     - gputil
+
+    # Generación de datos sintéticos para balanceo avanzado 
+    - ctgan

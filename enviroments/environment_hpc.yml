@@ -68,3 +68,6 @@ dependencies:
     
     # Utilidad para monitoreo de uso de la GPU durante el entrenamiento
     - gputil
+
+    # Generación de datos sintéticos para balanceo avanzado 
+    - ctgan
