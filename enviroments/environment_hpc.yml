@@ -74,3 +74,6 @@ dependencies:
 
     # Generación de datos sintéticos para balanceo avanzado 
     - ctgan
+
+    # Optimizador de hiperparámetros para TensorFlow/Keras
+    - keras-tuner
