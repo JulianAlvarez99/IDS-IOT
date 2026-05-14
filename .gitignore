@@ -35,3 +35,7 @@ build/
 
 # Kaggle
 .kaggle/
+
+*.h5
+*.pkl
+Percentiles/
