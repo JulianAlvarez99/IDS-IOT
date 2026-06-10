@@ -1,0 +1,91 @@
+AcceleratorConfig:
+  Board: pynq-z2
+  Driver: python
+  Interface: axi_stream
+  Precision:
+    Input: float
+    Output: float
+Backend: VivadoAccelerator
+ClockPeriod: 5
+ClockUncertainty: 12.5%
+HLSConfig:
+  LayerName:
+    batch_normalization:
+      Precision:
+        bias: auto
+        result: auto
+        scale: auto
+      Trace: false
+    batch_normalization_1:
+      Precision:
+        bias: auto
+        result: auto
+        scale: auto
+      Trace: false
+    output:
+      Precision:
+        bias: auto
+        result: auto
+        weight: fixed<8,3,TRN,WRAP,0>
+      Trace: false
+    output_sigmoid:
+      Precision:
+        result: auto
+      Trace: false
+    q_activation:
+      Precision:
+        result: ufixed<4,0,RND_CONV,SAT,0>
+      Trace: false
+    q_activation_1:
+      Precision:
+        result: ufixed<4,0,RND_CONV,SAT,0>
+      Trace: false
+    qdense_1:
+      Precision:
+        bias: auto
+        result: auto
+        weight: fixed<8,3,TRN,WRAP,0>
+      Trace: false
+    qdense_1_input:
+      Precision:
+        result: auto
+      Trace: false
+    qdense_1_linear:
+      Precision:
+        result: auto
+      Trace: false
+    qdense_2:
+      Precision:
+        bias: auto
+        result: auto
+        weight: fixed<8,3,TRN,WRAP,0>
+      Trace: false
+    qdense_2_linear:
+      Precision:
+        result: auto
+      Trace: false
+  Model:
+    BramFactor: 1000000000
+    Precision:
+      default: fixed<16,6>
+    ReuseFactor: 1
+    Strategy: Latency
+    TraceOutput: false
+IOType: io_parallel
+InputShapes:
+  qdense_1_input:
+  - 18
+KerasModel: !keras_model 'hlsPrj/student_qat_final/keras_model.keras'
+OutputDir: hlsPrj/student_qat_final
+OutputShapes:
+  layer11_out:
+  - 1
+Part: xc7z020clg400-1
+ProjectName: myproject
+Stamp: f7cf0ef5
+Version: 1.0.0
+WriterConfig:
+  Namespace: null
+  TBOutputStream: both
+  WriteTar: false
+  WriteWeightsTxt: true
