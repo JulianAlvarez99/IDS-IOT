@@ -1,0 +1,146 @@
+
+
+================================================================
+== Vitis HLS Report for 'sigmoid_array_array_ap_fixed_8_2_5_3_0_1u_sigmoid_config11_s'
+================================================================
+* Date:           Fri Jun 26 18:52:45 2026
+
+* Version:        2022.2 (Build 3670227 on Oct 13 2022)
+* Project:        myproject_prj
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  5.00 ns|  4.244 ns|     0.62 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline|
+    |   min   |   max   |    min    |    max    | min | max |   Type  |
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |        3|        3|  15.000 ns|  15.000 ns|    3|    3|       no|
+    +---------+---------+-----------+-----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    -|       -|      -|    -|
+|Expression       |        -|    -|       0|     13|    -|
+|FIFO             |        -|    -|       -|      -|    -|
+|Instance         |        -|    -|       -|      -|    -|
+|Memory           |        1|    -|       0|      0|    -|
+|Multiplexer      |        -|    -|       -|     52|    -|
+|Register         |        -|    -|      19|      -|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |        1|    0|      19|     65|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      280|  220|  106400|  53200|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |       ~0|    0|      ~0|     ~0|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    +-----------------+----------------------------------------------------------------------------------+---------+---+----+-----+------+-----+------+-------------+
+    |      Memory     |                                      Module                                      | BRAM_18K| FF| LUT| URAM| Words| Bits| Banks| W*Bits*Banks|
+    +-----------------+----------------------------------------------------------------------------------+---------+---+----+-----+------+-----+------+-------------+
+    |sigmoid_table_U  |sigmoid_array_array_ap_fixed_8_2_5_3_0_1u_sigmoid_config11_s_sigmoid_table_ROg8j  |        1|  0|   0|    0|  1024|   10|     1|        10240|
+    +-----------------+----------------------------------------------------------------------------------+---------+---+----+-----+------+-----+------+-------------+
+    |Total            |                                                                                  |        1|  0|   0|    0|  1024|   10|     1|        10240|
+    +-----------------+----------------------------------------------------------------------------------+---------+---+----+-----+------+-----+------+-------------+
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-----------------+----------+----+---+----+------------+------------+
+    |  Variable Name  | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-----------------+----------+----+---+----+------------+------------+
+    |ap_block_state1  |        or|   0|  0|   2|           1|           1|
+    |index_fu_59_p2   |       xor|   0|  0|  11|          10|          11|
+    +-----------------+----------+----+---+----+------------+------------+
+    |Total            |          |   0|  0|  13|          11|          12|
+    +-----------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-----------------------+----+-----------+-----+-----------+
+    |          Name         | LUT| Input Size| Bits| Total Bits|
+    +-----------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm              |  25|          5|    1|          5|
+    |ap_done                |   9|          2|    1|          2|
+    |internal_output_blk_n  |   9|          2|    1|          2|
+    |layer10_out_blk_n      |   9|          2|    1|          2|
+    +-----------------------+----+-----------+-----+-----------+
+    |Total                  |  52|         11|    4|         11|
+    +-----------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +---------------------+---+----+-----+-----------+
+    |         Name        | FF| LUT| Bits| Const Bits|
+    +---------------------+---+----+-----+-----------+
+    |ap_CS_fsm            |  4|   0|    4|          0|
+    |ap_done_reg          |  1|   0|    1|          0|
+    |in_data_data_reg_84  |  8|   0|    8|          0|
+    |tmp_reg_94           |  6|   0|    6|          0|
+    +---------------------+---+----+-----+-----------+
+    |Total                | 19|   0|   19|          0|
+    +---------------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++--------------------------------+-----+-----+------------+---------------------------------------------------------------+--------------+
+|            RTL Ports           | Dir | Bits|  Protocol  |                         Source Object                         |    C Type    |
++--------------------------------+-----+-----+------------+---------------------------------------------------------------+--------------+
+|ap_clk                          |   in|    1|  ap_ctrl_hs|  sigmoid<array,array<ap_fixed<8,2,5,3,0>,1u>,sigmoid_config11>|  return value|
+|ap_rst                          |   in|    1|  ap_ctrl_hs|  sigmoid<array,array<ap_fixed<8,2,5,3,0>,1u>,sigmoid_config11>|  return value|
+|ap_start                        |   in|    1|  ap_ctrl_hs|  sigmoid<array,array<ap_fixed<8,2,5,3,0>,1u>,sigmoid_config11>|  return value|
+|ap_done                         |  out|    1|  ap_ctrl_hs|  sigmoid<array,array<ap_fixed<8,2,5,3,0>,1u>,sigmoid_config11>|  return value|
+|ap_continue                     |   in|    1|  ap_ctrl_hs|  sigmoid<array,array<ap_fixed<8,2,5,3,0>,1u>,sigmoid_config11>|  return value|
+|ap_idle                         |  out|    1|  ap_ctrl_hs|  sigmoid<array,array<ap_fixed<8,2,5,3,0>,1u>,sigmoid_config11>|  return value|
+|ap_ready                        |  out|    1|  ap_ctrl_hs|  sigmoid<array,array<ap_fixed<8,2,5,3,0>,1u>,sigmoid_config11>|  return value|
+|layer10_out_dout                |   in|    8|     ap_fifo|                                                    layer10_out|       pointer|
+|layer10_out_num_data_valid      |   in|    2|     ap_fifo|                                                    layer10_out|       pointer|
+|layer10_out_fifo_cap            |   in|    2|     ap_fifo|                                                    layer10_out|       pointer|
+|layer10_out_empty_n             |   in|    1|     ap_fifo|                                                    layer10_out|       pointer|
+|layer10_out_read                |  out|    1|     ap_fifo|                                                    layer10_out|       pointer|
+|internal_output_din             |  out|    8|     ap_fifo|                                                internal_output|       pointer|
+|internal_output_num_data_valid  |   in|    2|     ap_fifo|                                                internal_output|       pointer|
+|internal_output_fifo_cap        |   in|    2|     ap_fifo|                                                internal_output|       pointer|
+|internal_output_full_n          |   in|    1|     ap_fifo|                                                internal_output|       pointer|
+|internal_output_write           |  out|    1|     ap_fifo|                                                internal_output|       pointer|
++--------------------------------+-----+-----+------------+---------------------------------------------------------------+--------------+
+

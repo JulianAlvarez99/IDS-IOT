@@ -1,0 +1,67 @@
+# =============================================================================
+# Entorno Conda: ids-iot-train-linux (Servidor HPC - Linux Cinnamon)
+# Proyecto: Módulo de Detección para IDS Pasivo
+#
+# Propósito : Entrenamiento, Compresión (NAS, QAT, Pruning) y Traducción HLS.
+# Fix       : Versiones estrictas para mantener Keras 2 y QKeras 0.8.0
+# =============================================================================
+
+name: ids-iot-train-linux
+
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  # ── Core ────────────────────────────────────────────────────────────────────
+  - python=3.10     # Fijado para asegurar compatibilidad con TF 2.11 - 2.13
+  - pip
+
+  # ── Entorno Jupyter ─────────────────────────────────────────────────────────
+  - ipykernel
+  - jupyterlab>=4.0
+
+  # ── Manipulación de datos ───────────────────────────────────────────────────
+  - numpy<1.24.0    # Limitado para evitar warnings de tensores con TF 2.x
+  - pandas
+  - pyarrow
+  - tqdm
+
+  # ── ML clásico ──────────────────────────────────────────────────────────────
+  - scikit-learn
+  - joblib
+
+  # ── Feature Importance y Explicabilidad (SHAP/XGBoost) ──────────────────────
+  - xgboost
+  - shap
+
+  # ── Visualización ───────────────────────────────────────────────────────────
+  - matplotlib
+  - seaborn
+  - pydot          
+  - graphviz       
+
+  # ── Instalados vía pip ──────────────────────────────────────────────────────
+  - pip:
+    # TensorFlow nativo para Linux acotado estrictamente a la era de Keras 2
+    - tensorflow[and-cuda]>=2.11.0,<2.14.0
+
+    # ── Módulo de Compresión y Hardware (Etapas 4 y 5) ────────────────────────
+    - tensorflow-model-optimization 
+    - hls4ml                        
+    - qkeras==0.8.0                 # Fijado estrictamente
+
+    # ── Generación de Datos y Balanceo (Etapas 2 y 3) ─────────────────────────
+    - ctgan                         
+    - imbalanced-learn              
+
+    # ── NAS y Redes ───────────────────────────────────────────────────────────
+    - keras-tuner                   
+    - keras-tcn
+    - visualkeras
+
+    # ── Utilidades ────────────────────────────────────────────────────────────
+    - kagglehub
+    - gputil
+    - black
+    - isort

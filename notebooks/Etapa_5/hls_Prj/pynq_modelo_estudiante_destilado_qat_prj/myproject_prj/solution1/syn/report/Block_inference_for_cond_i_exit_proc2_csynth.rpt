@@ -1,0 +1,160 @@
+
+
+================================================================
+== Vitis HLS Report for 'Block_inference_for_cond_i_exit_proc2'
+================================================================
+* Date:           Fri Jun 26 18:52:43 2026
+
+* Version:        2022.2 (Build 3670227 on Oct 13 2022)
+* Project:        myproject_prj
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  5.00 ns|  4.375 ns|     0.62 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline|
+    |   min   |   max   |    min    |    max    | min | max |   Type  |
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |       17|       17|  85.000 ns|  85.000 ns|   17|   17|       no|
+    +---------+---------+-----------+-----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    -|       -|      -|    -|
+|Expression       |        -|    -|       0|      4|    -|
+|FIFO             |        -|    -|       -|      -|    -|
+|Instance         |        -|    -|       -|      -|    -|
+|Memory           |        -|    -|       -|      -|    -|
+|Multiplexer      |        -|    -|       -|    129|    -|
+|Register         |        -|    -|     156|      -|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |        0|    0|     156|    133|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      280|  220|  106400|  53200|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |        0|    0|      ~0|     ~0|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +------------------+----------+----+---+----+------------+------------+
+    |   Variable Name  | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +------------------+----------+----+---+----+------------+------------+
+    |ap_block_state1   |        or|   0|  0|   2|           1|           1|
+    |ap_block_state18  |        or|   0|  0|   2|           1|           1|
+    +------------------+----------+----+---+----+------------+------------+
+    |Total             |          |   0|  0|   4|           2|           2|
+    +------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +--------------------------+----+-----------+-----+-----------+
+    |           Name           | LUT| Input Size| Bits| Total Bits|
+    +--------------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm                 |  93|         19|    1|         19|
+    |ap_done                   |   9|          2|    1|          2|
+    |features_in_data_V_blk_n  |   9|          2|    1|          2|
+    |internal_input_blk_n      |   9|          2|    1|          2|
+    |real_start                |   9|          2|    1|          2|
+    +--------------------------+----+-----------+-----+-----------+
+    |Total                     | 129|         27|    5|         27|
+    +--------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +------------------------------------+----+----+-----+-----------+
+    |                Name                | FF | LUT| Bits| Const Bits|
+    +------------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                           |  18|   0|   18|          0|
+    |ap_done_reg                         |   1|   0|    1|          0|
+    |features_in_data_V_read_10_reg_115  |   8|   0|    8|          0|
+    |features_in_data_V_read_11_reg_120  |   8|   0|    8|          0|
+    |features_in_data_V_read_12_reg_125  |   8|   0|    8|          0|
+    |features_in_data_V_read_13_reg_130  |   8|   0|    8|          0|
+    |features_in_data_V_read_14_reg_135  |   8|   0|    8|          0|
+    |features_in_data_V_read_15_reg_140  |   8|   0|    8|          0|
+    |features_in_data_V_read_16_reg_145  |   8|   0|    8|          0|
+    |features_in_data_V_read_1_reg_70    |   8|   0|    8|          0|
+    |features_in_data_V_read_2_reg_75    |   8|   0|    8|          0|
+    |features_in_data_V_read_3_reg_80    |   8|   0|    8|          0|
+    |features_in_data_V_read_4_reg_85    |   8|   0|    8|          0|
+    |features_in_data_V_read_5_reg_90    |   8|   0|    8|          0|
+    |features_in_data_V_read_6_reg_95    |   8|   0|    8|          0|
+    |features_in_data_V_read_7_reg_100   |   8|   0|    8|          0|
+    |features_in_data_V_read_8_reg_105   |   8|   0|    8|          0|
+    |features_in_data_V_read_9_reg_110   |   8|   0|    8|          0|
+    |features_in_data_V_read_reg_65      |   8|   0|    8|          0|
+    |start_once_reg                      |   1|   0|    1|          0|
+    +------------------------------------+----+----+-----+-----------+
+    |Total                               | 156|   0|  156|          0|
+    +------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-----------------------------------+-----+-----+------------+---------------------------------------+--------------+
+|             RTL Ports             | Dir | Bits|  Protocol  |             Source Object             |    C Type    |
++-----------------------------------+-----+-----+------------+---------------------------------------+--------------+
+|ap_clk                             |   in|    1|  ap_ctrl_hs|  Block_inference_for.cond.i.exit_proc2|  return value|
+|ap_rst                             |   in|    1|  ap_ctrl_hs|  Block_inference_for.cond.i.exit_proc2|  return value|
+|ap_start                           |   in|    1|  ap_ctrl_hs|  Block_inference_for.cond.i.exit_proc2|  return value|
+|start_full_n                       |   in|    1|  ap_ctrl_hs|  Block_inference_for.cond.i.exit_proc2|  return value|
+|ap_done                            |  out|    1|  ap_ctrl_hs|  Block_inference_for.cond.i.exit_proc2|  return value|
+|ap_continue                        |   in|    1|  ap_ctrl_hs|  Block_inference_for.cond.i.exit_proc2|  return value|
+|ap_idle                            |  out|    1|  ap_ctrl_hs|  Block_inference_for.cond.i.exit_proc2|  return value|
+|ap_ready                           |  out|    1|  ap_ctrl_hs|  Block_inference_for.cond.i.exit_proc2|  return value|
+|start_out                          |  out|    1|  ap_ctrl_hs|  Block_inference_for.cond.i.exit_proc2|  return value|
+|start_write                        |  out|    1|  ap_ctrl_hs|  Block_inference_for.cond.i.exit_proc2|  return value|
+|features_in_data_V_dout            |   in|    8|     ap_fifo|                     features_in_data_V|       pointer|
+|features_in_data_V_num_data_valid  |   in|    6|     ap_fifo|                     features_in_data_V|       pointer|
+|features_in_data_V_fifo_cap        |   in|    6|     ap_fifo|                     features_in_data_V|       pointer|
+|features_in_data_V_empty_n         |   in|    1|     ap_fifo|                     features_in_data_V|       pointer|
+|features_in_data_V_read            |  out|    1|     ap_fifo|                     features_in_data_V|       pointer|
+|internal_input_din                 |  out|  144|     ap_fifo|                         internal_input|       pointer|
+|internal_input_num_data_valid      |   in|    2|     ap_fifo|                         internal_input|       pointer|
+|internal_input_fifo_cap            |   in|    2|     ap_fifo|                         internal_input|       pointer|
+|internal_input_full_n              |   in|    1|     ap_fifo|                         internal_input|       pointer|
+|internal_input_write               |  out|    1|     ap_fifo|                         internal_input|       pointer|
++-----------------------------------+-----+-----+------------+---------------------------------------+--------------+
+

@@ -1,0 +1,878 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1782510765623">
+  <ports id="1" name="internal_output" type="PortType" coreName="FIFO_SRL" coreId="1" bitwidth="8" iftype="IfTypeRom">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="2" name="result" type="PortType" coreId="261" bitwidth="32" direction="DirOut">
+    <dataInputObjs>write</dataInputObjs>
+  </ports>
+  <edges id="66" source_obj="//@ports.0" sink_obj="//@blocks.0/@node_objs.0"/>
+  <edges id="69" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@blocks.0/@node_objs.1"/>
+  <edges id="74" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@blocks.0/@node_objs.2"/>
+  <edges id="75" source_obj="//@blocks.0/@node_objs.1" sink_obj="//@blocks.0/@node_objs.3"/>
+  <edges id="76" source_obj="//@blocks.0/@node_objs.2" sink_obj="//@blocks.0/@node_objs.3"/>
+  <edges id="77" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@blocks.0/@node_objs.3"/>
+  <edges id="80" source_obj="//@blocks.0/@node_objs.3" sink_obj="//@blocks.0/@node_objs.4"/>
+  <edges id="88" source_obj="//@blocks.0/@node_objs.4" sink_obj="//@blocks.0/@node_objs.5"/>
+  <edges id="89" source_obj="//@blocks.0/@node_objs.5" sink_obj="//@blocks.0/@node_objs.6"/>
+  <edges id="92" source_obj="//@blocks.0/@node_objs.6" sink_obj="//@blocks.0/@node_objs.7"/>
+  <edges id="96" source_obj="//@blocks.0/@node_objs.7" sink_obj="//@blocks.0/@node_objs.8"/>
+  <edges id="97" source_obj="//@blocks.0/@node_objs.8" sink_obj="//@blocks.0/@node_objs.9"/>
+  <edges id="98" source_obj="//@blocks.0/@node_objs.8" sink_obj="//@blocks.0/@node_objs.10"/>
+  <edges id="103" source_obj="//@blocks.0/@node_objs.10" sink_obj="//@blocks.0/@node_objs.11"/>
+  <edges id="108" source_obj="//@blocks.0/@node_objs.11" sink_obj="//@blocks.0/@node_objs.12"/>
+  <edges id="111" source_obj="//@blocks.0/@node_objs.8" sink_obj="//@blocks.0/@node_objs.13"/>
+  <edges id="114" source_obj="//@blocks.0/@node_objs.13" sink_obj="//@blocks.0/@node_objs.14"/>
+  <edges id="115" source_obj="//@blocks.0/@node_objs.14" sink_obj="//@blocks.0/@node_objs.15"/>
+  <edges id="118" source_obj="//@blocks.0/@node_objs.15" sink_obj="//@blocks.0/@node_objs.16"/>
+  <edges id="119" source_obj="//@blocks.0/@node_objs.3" sink_obj="//@blocks.0/@node_objs.17"/>
+  <edges id="120" source_obj="//@blocks.0/@node_objs.16" sink_obj="//@blocks.0/@node_objs.17"/>
+  <edges id="121" source_obj="//@blocks.0/@node_objs.17" sink_obj="//@blocks.0/@node_objs.18"/>
+  <edges id="123" source_obj="//@blocks.0/@node_objs.12" sink_obj="//@blocks.0/@node_objs.19"/>
+  <edges id="124" source_obj="//@blocks.0/@node_objs.18" sink_obj="//@blocks.0/@node_objs.19"/>
+  <edges id="127" source_obj="//@blocks.0/@node_objs.10" sink_obj="//@blocks.0/@node_objs.20"/>
+  <edges id="129" source_obj="//@blocks.0/@node_objs.20" sink_obj="//@blocks.0/@node_objs.21"/>
+  <edges id="131" source_obj="//@blocks.0/@node_objs.9" sink_obj="//@blocks.0/@node_objs.22"/>
+  <edges id="136" source_obj="//@blocks.0/@node_objs.3" sink_obj="//@blocks.0/@node_objs.23"/>
+  <edges id="137" source_obj="//@blocks.0/@node_objs.22" sink_obj="//@blocks.0/@node_objs.23"/>
+  <edges id="138" source_obj="//@blocks.0/@node_objs.23" sink_obj="//@blocks.0/@node_objs.24"/>
+  <edges id="139" source_obj="//@blocks.0/@node_objs.21" sink_obj="//@blocks.0/@node_objs.24"/>
+  <edges id="140" source_obj="//@blocks.0/@node_objs.24" sink_obj="//@blocks.0/@node_objs.25"/>
+  <edges id="141" source_obj="//@blocks.0/@node_objs.19" sink_obj="//@blocks.0/@node_objs.25"/>
+  <edges id="146" source_obj="//@blocks.0/@node_objs.25" sink_obj="//@blocks.0/@node_objs.26"/>
+  <edges id="147" source_obj="//@blocks.0/@node_objs.3" sink_obj="//@blocks.0/@node_objs.27"/>
+  <edges id="148" source_obj="//@blocks.0/@node_objs.10" sink_obj="//@blocks.0/@node_objs.28"/>
+  <edges id="150" source_obj="//@blocks.0/@node_objs.8" sink_obj="//@blocks.0/@node_objs.29"/>
+  <edges id="153" source_obj="//@blocks.0/@node_objs.29" sink_obj="//@blocks.0/@node_objs.30"/>
+  <edges id="154" source_obj="//@blocks.0/@node_objs.27" sink_obj="//@blocks.0/@node_objs.31"/>
+  <edges id="155" source_obj="//@blocks.0/@node_objs.30" sink_obj="//@blocks.0/@node_objs.31"/>
+  <edges id="158" source_obj="//@blocks.0/@node_objs.8" sink_obj="//@blocks.0/@node_objs.32"/>
+  <edges id="159" source_obj="//@blocks.0/@node_objs.32" sink_obj="//@blocks.0/@node_objs.33"/>
+  <edges id="160" source_obj="//@blocks.0/@node_objs.27" sink_obj="//@blocks.0/@node_objs.34"/>
+  <edges id="161" source_obj="//@blocks.0/@node_objs.33" sink_obj="//@blocks.0/@node_objs.34"/>
+  <edges id="162" source_obj="//@blocks.0/@node_objs.28" sink_obj="//@blocks.0/@node_objs.35"/>
+  <edges id="163" source_obj="//@blocks.0/@node_objs.31" sink_obj="//@blocks.0/@node_objs.35"/>
+  <edges id="164" source_obj="//@blocks.0/@node_objs.34" sink_obj="//@blocks.0/@node_objs.35"/>
+  <edges id="165" source_obj="//@blocks.0/@node_objs.26" sink_obj="//@blocks.0/@node_objs.36"/>
+  <edges id="166" source_obj="//@blocks.0/@node_objs.35" sink_obj="//@blocks.0/@node_objs.37"/>
+  <edges id="167" source_obj="//@blocks.0/@node_objs.36" sink_obj="//@blocks.0/@node_objs.37"/>
+  <edges id="170" source_obj="//@blocks.0/@node_objs.37" sink_obj="//@blocks.0/@node_objs.38"/>
+  <edges id="174" source_obj="//@blocks.0/@node_objs.38" sink_obj="//@blocks.0/@node_objs.39"/>
+  <edges id="177" source_obj="//@blocks.0/@node_objs.37" sink_obj="//@blocks.0/@node_objs.40"/>
+  <edges id="179" source_obj="//@blocks.0/@node_objs.40" sink_obj="//@blocks.0/@node_objs.41"/>
+  <edges id="184" source_obj="//@blocks.0/@node_objs.7" sink_obj="//@blocks.0/@node_objs.42"/>
+  <edges id="187" source_obj="//@blocks.0/@node_objs.42" sink_obj="//@blocks.0/@node_objs.43"/>
+  <edges id="188" source_obj="//@blocks.0/@node_objs.43" sink_obj="//@blocks.0/@node_objs.44"/>
+  <edges id="189" source_obj="//@blocks.0/@node_objs.41" sink_obj="//@blocks.0/@node_objs.44"/>
+  <edges id="192" source_obj="//@blocks.0/@node_objs.1" sink_obj="//@blocks.0/@node_objs.45"/>
+  <edges id="193" source_obj="//@blocks.0/@node_objs.44" sink_obj="//@blocks.0/@node_objs.45"/>
+  <edges id="196" source_obj="//@blocks.0/@node_objs.39" sink_obj="//@blocks.0/@node_objs.46"/>
+  <edges id="197" source_obj="//@blocks.0/@node_objs.45" sink_obj="//@blocks.0/@node_objs.46"/>
+  <edges id="201" source_obj="//@blocks.0/@node_objs.46" sink_obj="//@blocks.0/@node_objs.47"/>
+  <edges id="204" source_obj="//@blocks.0/@node_objs.37" sink_obj="//@blocks.0/@node_objs.48"/>
+  <edges id="207" source_obj="//@blocks.0/@node_objs.44" sink_obj="//@blocks.0/@node_objs.49"/>
+  <edges id="210" source_obj="//@blocks.0/@node_objs.48" sink_obj="//@blocks.0/@node_objs.50"/>
+  <edges id="213" source_obj="//@blocks.0/@node_objs.50" sink_obj="//@blocks.0/@node_objs.51"/>
+  <edges id="214" source_obj="//@blocks.0/@node_objs.49" sink_obj="//@blocks.0/@node_objs.51"/>
+  <edges id="215" source_obj="//@blocks.0/@node_objs.47" sink_obj="//@blocks.0/@node_objs.52"/>
+  <edges id="218" source_obj="//@blocks.0/@node_objs.51" sink_obj="//@blocks.0/@node_objs.53"/>
+  <edges id="219" source_obj="//@blocks.0/@node_objs.52" sink_obj="//@blocks.0/@node_objs.53"/>
+  <edges id="220" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@blocks.0/@node_objs.54"/>
+  <edges id="222" source_obj="//@blocks.0/@node_objs.54" sink_obj="//@blocks.0/@node_objs.55"/>
+  <edges id="223" source_obj="//@blocks.0/@node_objs.53" sink_obj="//@blocks.0/@node_objs.55"/>
+  <edges id="224" source_obj="//@blocks.0/@node_objs.55" sink_obj="//@blocks.0/@node_objs.56"/>
+  <edges id="227" source_obj="//@blocks.0/@node_objs.57" sink_obj="//@ports.1"/>
+  <edges id="228" source_obj="//@blocks.0/@node_objs.56" sink_obj="//@blocks.0/@node_objs.57"/>
+  <blocks id="63" name="Block_inference_for.cond.i.exit13_proc3" type="BlockType">
+    <node_objs xsi:type="cdfg:CdfgNode" id="4" name="out_data_data" lineNumber="106" originalName="out_data.data" fileName="firmware/myproject.cpp" fileDirectory=".." coreName="FIFO_SRL" implIndex="srl" control="no" opType="fifo" coreId="81" contextFuncName="inference" bitwidth="8" opcode="read" m_display="0" m_delay="2.18" m_topoIndex="1" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="firmware/myproject.cpp" linenumber="106" fileDirectory="/mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj" functionName="inference"/>
+      <dataInputObjs>internal_output</dataInputObjs>
+      <dataOutputObjs>bitselect</dataOutputObjs>
+      <dataOutputObjs>sub</dataOutputObjs>
+      <dataOutputObjs>select</dataOutputObjs>
+      <dataOutputObjs>icmp</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="5" name="p_Result_8" lineNumber="1041" originalName="__Result__" fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" fileDirectory=".." rtlName="p_Result_8_reg_432" coreId="539765310" contextFuncName="to_double" bitwidth="1" opcode="bitselect" m_display="0" m_topoIndex="2" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" linenumber="1041" fileDirectory="/mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj" functionName="to_double"/>
+      <dataInputObjs>read</dataInputObjs>
+      <dataOutputObjs>select</dataOutputObjs>
+      <dataOutputObjs>bitconcatenate</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="6" name="tmp_V" lineNumber="1044" originalName="tmp.V" fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" fileDirectory=".." rtlName="tmp_V_fu_114_p2" coreName="Adder" implIndex="fabric" control="no" opType="sub" coreId="1" contextFuncName="to_double" bitwidth="8" opcode="sub" m_display="0" m_delay="1.91" m_topoIndex="3" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" linenumber="1044" fileDirectory="/mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj" functionName="to_double"/>
+      <dataInputObjs>read</dataInputObjs>
+      <dataOutputObjs>select</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="7" name="tmp_V_2" lineNumber="1043" originalName="tmp.V" fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" fileDirectory=".." rtlName="tmp_V_2_fu_120_p3" coreName="Sel" implIndex="auto_sel" control="no" opType="select" coreId="73" contextFuncName="to_double" bitwidth="8" opcode="select" nodeLabel="1.0" m_display="0" m_delay="1.24" m_topoIndex="4" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" linenumber="1043" fileDirectory="/mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj" functionName="to_double"/>
+      <dataInputObjs>bitselect</dataInputObjs>
+      <dataInputObjs>sub</dataInputObjs>
+      <dataInputObjs>read</dataInputObjs>
+      <dataOutputObjs>partselect</dataOutputObjs>
+      <dataOutputObjs>and</dataOutputObjs>
+      <dataOutputObjs>bitselect</dataOutputObjs>
+      <dataOutputObjs>zext</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="8" name="p_Result_s" lineNumber="1197" originalName="__Result__" fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_int_base.h" fileDirectory=".." rtlName="p_Result_s_fu_125_p4" coreId="1601200416" contextFuncName="countLeadingZeros" bitwidth="8" opcode="partselect" nodeLabel="1.0" m_display="0" m_topoIndex="5" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_int_base.h" linenumber="1197" fileDirectory="/mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj" functionName="countLeadingZeros"/>
+      <dataInputObjs>select</dataInputObjs>
+      <dataOutputObjs>bitconcatenate</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="9" name="p_Result_9" lineNumber="1198" originalName="__Result__" fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_int_base.h" fileDirectory=".." rtlName="p_Result_9_fu_135_p3" coreId="1305030656" contextFuncName="countLeadingZeros" bitwidth="9" opcode="bitconcatenate" nodeLabel="1.0" m_display="0" m_topoIndex="6" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_int_base.h" linenumber="1198" fileDirectory="/mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj" functionName="countLeadingZeros"/>
+      <dataInputObjs>partselect</dataInputObjs>
+      <dataOutputObjs>sext</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="10" name="sext_ln1198" lineNumber="1198" fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_int_base.h" fileDirectory=".." rtlName="sext_ln1198_fu_143_p1" coreId="0" contextFuncName="countLeadingZeros" bitwidth="32" opcode="sext" nodeLabel="1.0" m_display="0" m_topoIndex="7" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_int_base.h" linenumber="1198" fileDirectory="/mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj" functionName="countLeadingZeros"/>
+      <dataInputObjs>bitconcatenate</dataInputObjs>
+      <dataOutputObjs>cttz</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="11" name="l" lineNumber="1199" originalName="l" fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_int_base.h" fileDirectory=".." rtlName="l_fu_147_p3" coreId="539770485" contextFuncName="countLeadingZeros" bitwidth="32" opcode="cttz" nodeLabel="1.0" m_display="0" m_topoIndex="8" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_int_base.h" linenumber="1199" fileDirectory="/mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj" functionName="countLeadingZeros"/>
+      <dataInputObjs>sext</dataInputObjs>
+      <dataOutputObjs>sub</dataOutputObjs>
+      <dataOutputObjs>trunc</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="12" name="sub_ln1049" lineNumber="1049" fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" fileDirectory=".." rtlName="sub_ln1049_fu_155_p2" coreName="Adder" implIndex="fabric" control="no" opType="sub" coreId="1" contextFuncName="to_double" bitwidth="32" opcode="sub" nodeLabel="1.0" m_display="0" m_delay="2.55" m_topoIndex="9" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" linenumber="1049" fileDirectory="/mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj" functionName="to_double"/>
+      <dataInputObjs>cttz</dataInputObjs>
+      <dataOutputObjs>trunc</dataOutputObjs>
+      <dataOutputObjs>add</dataOutputObjs>
+      <dataOutputObjs>trunc</dataOutputObjs>
+      <dataOutputObjs>add</dataOutputObjs>
+      <dataOutputObjs>sub</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="13" name="trunc_ln1049" lineNumber="1049" fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" fileDirectory=".." rtlName="trunc_ln1049_fu_161_p1" coreId="1305430832" contextFuncName="to_double" bitwidth="8" opcode="trunc" nodeLabel="1.0" m_display="0" m_topoIndex="10" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" linenumber="1049" fileDirectory="/mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj" functionName="to_double"/>
+      <dataInputObjs>sub</dataInputObjs>
+      <dataOutputObjs>add</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="14" name="lsb_index" lineNumber="1049" originalName="lsb_index" fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" fileDirectory=".." rtlName="lsb_index_fu_178_p2" coreName="Adder" implIndex="fabric" control="no" opType="add" coreId="1" contextFuncName="to_double" bitwidth="32" opcode="add" nodeLabel="2.0" m_display="0" m_delay="2.55" m_topoIndex="14" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" linenumber="1049" fileDirectory="/mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj" functionName="to_double"/>
+      <dataInputObjs>sub</dataInputObjs>
+      <dataOutputObjs>partselect</dataOutputObjs>
+      <dataOutputObjs>bitselect</dataOutputObjs>
+      <dataOutputObjs>icmp</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="15" name="tmp_6" lineNumber="1051" fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" fileDirectory=".." rtlName="tmp_6_reg_483" coreId="1307355344" contextFuncName="to_double" bitwidth="31" opcode="partselect" nodeLabel="2.0" m_display="0" m_topoIndex="15" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" linenumber="1051" fileDirectory="/mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj" functionName="to_double"/>
+      <dataInputObjs>add</dataInputObjs>
+      <dataOutputObjs>icmp</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="16" name="icmp_ln1051" lineNumber="1051" fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" fileDirectory=".." rtlName="icmp_ln1051_fu_229_p2" coreName="Cmp" implIndex="auto" control="no" opType="icmp" coreId="9" contextFuncName="to_double" bitwidth="1" opcode="icmp" nodeLabel="3.0" m_display="0" m_delay="2.47" m_topoIndex="23" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" linenumber="1051" fileDirectory="/mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj" functionName="to_double"/>
+      <dataInputObjs>partselect</dataInputObjs>
+      <dataOutputObjs>and</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="17" name="trunc_ln1052" lineNumber="1052" fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" fileDirectory=".." rtlName="trunc_ln1052_fu_165_p1" coreId="1305430832" contextFuncName="to_double" bitwidth="3" opcode="trunc" nodeLabel="1.0" m_display="0" m_topoIndex="11" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" linenumber="1052" fileDirectory="/mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj" functionName="to_double"/>
+      <dataInputObjs>sub</dataInputObjs>
+      <dataOutputObjs>sub</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="18" name="sub_ln1052" lineNumber="1052" fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" fileDirectory=".." rtlName="sub_ln1052_fu_193_p2" coreName="Adder" implIndex="fabric" control="no" opType="sub" coreId="1" contextFuncName="to_double" bitwidth="3" opcode="sub" nodeLabel="2.0" m_display="0" m_delay="1.65" m_topoIndex="16" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" linenumber="1052" fileDirectory="/mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj" functionName="to_double"/>
+      <dataInputObjs>trunc</dataInputObjs>
+      <dataOutputObjs>zext</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="19" name="zext_ln1052" lineNumber="1052" fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" fileDirectory=".." rtlName="zext_ln1052_fu_198_p1" coreId="1307471712" contextFuncName="to_double" bitwidth="8" opcode="zext" nodeLabel="2.0" m_display="0" m_topoIndex="17" m_clusterGroupNumber="1">
+      <inlineStackInfo fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" linenumber="1052" fileDirectory="/mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj" functionName="to_double"/>
+      <dataInputObjs>sub</dataInputObjs>
+      <dataOutputObjs>lshr</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="20" name="lshr_ln1052" lineNumber="1052" fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" fileDirectory=".." rtlName="lshr_ln1052_fu_202_p2" coreName="Shifter" implIndex="auto_pipe" control="no" opType="lshr" coreId="75" contextFuncName="to_double" bitwidth="8" opcode="lshr" nodeLabel="2.0" m_display="0" m_topoIndex="18" m_clusterGroupNumber="1">
+      <inlineStackInfo fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" linenumber="1052" fileDirectory="/mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj" functionName="to_double"/>
+      <dataInputObjs>zext</dataInputObjs>
+      <dataOutputObjs>and</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="21" name="p_Result_5" lineNumber="1052" originalName="__Result__" fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" fileDirectory=".." rtlName="p_Result_5_fu_208_p2" coreName="LogicGate" implIndex="auto" control="no" opType="and" coreId="74" contextFuncName="to_double" bitwidth="8" opcode="and" nodeLabel="2.0" m_display="0" m_topoIndex="19" m_clusterGroupNumber="1">
+      <inlineStackInfo fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" linenumber="1052" fileDirectory="/mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj" functionName="to_double"/>
+      <dataInputObjs>select</dataInputObjs>
+      <dataInputObjs>lshr</dataInputObjs>
+      <dataOutputObjs>icmp</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="22" name="icmp_ln1052" lineNumber="1052" fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" fileDirectory=".." rtlName="icmp_ln1052_fu_213_p2" coreName="Cmp" implIndex="auto" control="no" opType="icmp" coreId="9" contextFuncName="to_double" bitwidth="1" opcode="icmp" nodeLabel="2.0" m_display="0" m_delay="2.12" m_topoIndex="20" m_clusterGroupNumber="1">
+      <inlineStackInfo fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" linenumber="1052" fileDirectory="/mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj" functionName="to_double"/>
+      <dataInputObjs>and</dataInputObjs>
+      <dataOutputObjs>and</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="23" name="a" lineNumber="1051" originalName="a" fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" fileDirectory=".." rtlName="a_fu_234_p2" coreName="LogicGate" implIndex="auto" control="no" opType="and" coreId="74" contextFuncName="to_double" bitwidth="1" opcode="and" nodeLabel="3.0" m_display="0" m_topoIndex="24" m_clusterGroupNumber="2">
+      <inlineStackInfo fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" linenumber="1051" fileDirectory="/mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj" functionName="to_double"/>
+      <dataInputObjs>icmp</dataInputObjs>
+      <dataInputObjs>icmp</dataInputObjs>
+      <dataOutputObjs>or</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="24" name="tmp_7" lineNumber="1054" fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" fileDirectory=".." rtlName="tmp_7_fu_239_p3" coreId="1308190752" contextFuncName="to_double" bitwidth="1" opcode="bitselect" nodeLabel="3.0" m_display="0" m_topoIndex="25" m_clusterGroupNumber="2">
+      <inlineStackInfo fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" linenumber="1054" fileDirectory="/mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj" functionName="to_double"/>
+      <dataInputObjs>add</dataInputObjs>
+      <dataOutputObjs>xor</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="25" name="xor_ln1054" lineNumber="1054" fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" fileDirectory=".." rtlName="xor_ln1054_fu_246_p2" coreName="LogicGate" implIndex="auto" control="no" opType="xor" coreId="74" contextFuncName="to_double" bitwidth="1" opcode="xor" nodeLabel="3.0" m_display="0" m_topoIndex="26" m_clusterGroupNumber="2">
+      <inlineStackInfo fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" linenumber="1054" fileDirectory="/mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj" functionName="to_double"/>
+      <dataInputObjs>bitselect</dataInputObjs>
+      <dataOutputObjs>and</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="26" name="add_ln1054" lineNumber="1054" fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" fileDirectory=".." rtlName="add_ln1054_fu_252_p2" coreName="Adder" implIndex="fabric" control="no" opType="add" coreId="1" contextFuncName="to_double" bitwidth="8" opcode="add" nodeLabel="3.0" m_display="0" m_delay="1.91" m_topoIndex="27" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" linenumber="1054" fileDirectory="/mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj" functionName="to_double"/>
+      <dataInputObjs>trunc</dataInputObjs>
+      <dataOutputObjs>bitselect</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="27" name="p_Result_3" lineNumber="1054" originalName="__Result__" fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" fileDirectory=".." rtlName="p_Result_3_fu_257_p3" coreId="1308103928" contextFuncName="to_double" bitwidth="1" opcode="bitselect" nodeLabel="3.0" m_display="0" m_topoIndex="28" m_clusterGroupNumber="2">
+      <inlineStackInfo fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" linenumber="1054" fileDirectory="/mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj" functionName="to_double"/>
+      <dataInputObjs>select</dataInputObjs>
+      <dataInputObjs>add</dataInputObjs>
+      <dataOutputObjs>and</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="28" name="and_ln1054" lineNumber="1054" fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" fileDirectory=".." rtlName="and_ln1054_fu_264_p2" coreName="LogicGate" implIndex="auto" control="no" opType="and" coreId="74" contextFuncName="to_double" bitwidth="1" opcode="and" nodeLabel="3.0" m_display="0" m_topoIndex="29" m_clusterGroupNumber="2">
+      <inlineStackInfo fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" linenumber="1054" fileDirectory="/mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj" functionName="to_double"/>
+      <dataInputObjs>bitselect</dataInputObjs>
+      <dataInputObjs>xor</dataInputObjs>
+      <dataOutputObjs>or</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="29" name="or_ln1054" lineNumber="1054" fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" fileDirectory=".." rtlName="or_ln1054_fu_270_p2" coreName="LogicGate" implIndex="auto" control="no" opType="or" coreId="74" contextFuncName="to_double" bitwidth="1" opcode="or" nodeLabel="3.0" m_display="0" m_topoIndex="30" m_clusterGroupNumber="2">
+      <inlineStackInfo fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" linenumber="1054" fileDirectory="/mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj" functionName="to_double"/>
+      <dataInputObjs>and</dataInputObjs>
+      <dataInputObjs>and</dataInputObjs>
+      <dataOutputObjs>bitconcatenate</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="30" name="or_ln" lineNumber="1054" fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" fileDirectory=".." rtlName="or_ln_fu_276_p3" coreId="1308808272" contextFuncName="to_double" bitwidth="2" opcode="bitconcatenate" nodeLabel="3.0" m_display="0" m_delay="0.97" m_topoIndex="31" m_clusterGroupNumber="2">
+      <inlineStackInfo fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" linenumber="1054" fileDirectory="/mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj" functionName="to_double"/>
+      <dataInputObjs>or</dataInputObjs>
+      <dataOutputObjs>zext</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="31" name="zext_ln1062" lineNumber="1062" fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" fileDirectory=".." rtlName="zext_ln1062_fu_284_p1" coreId="1308103616" contextFuncName="to_double" bitwidth="64" opcode="zext" nodeLabel="3.0" m_display="0" m_topoIndex="32" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" linenumber="1062" fileDirectory="/mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj" functionName="to_double"/>
+      <dataInputObjs>select</dataInputObjs>
+      <dataOutputObjs>lshr</dataOutputObjs>
+      <dataOutputObjs>shl</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="32" name="icmp_ln1063" lineNumber="1063" fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" fileDirectory=".." rtlName="icmp_ln1063_fu_287_p2" coreName="Cmp" implIndex="auto" control="no" opType="icmp" coreId="9" contextFuncName="to_double" bitwidth="1" opcode="icmp" nodeLabel="3.0" m_display="0" m_delay="2.47" m_topoIndex="33" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" linenumber="1063" fileDirectory="/mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj" functionName="to_double"/>
+      <dataInputObjs>add</dataInputObjs>
+      <dataOutputObjs>select</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="33" name="add_ln1063" lineNumber="1063" fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" fileDirectory=".." rtlName="add_ln1063_fu_219_p2" coreName="Adder" implIndex="fabric" control="no" opType="add" coreId="1" contextFuncName="to_double" bitwidth="32" opcode="add" nodeLabel="2.0" m_display="0" m_delay="2.55" m_topoIndex="21" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" linenumber="1063" fileDirectory="/mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj" functionName="to_double"/>
+      <dataInputObjs>sub</dataInputObjs>
+      <dataOutputObjs>zext</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="34" name="zext_ln1063" lineNumber="1063" fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" fileDirectory=".." rtlName="grp_fu_295_p1" coreId="1308808400" contextFuncName="to_double" bitwidth="64" opcode="zext" nodeLabel="3.0" m_display="0" m_topoIndex="34" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" linenumber="1063" fileDirectory="/mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj" functionName="to_double"/>
+      <dataInputObjs>add</dataInputObjs>
+      <dataOutputObjs>lshr</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="35" name="lshr_ln1063" lineNumber="1063" fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" fileDirectory=".." rtlName="lshr_64ns_32ns_64_2_1_U99" coreName="Shifter" implIndex="auto_pipe" control="no" opType="lshr" coreId="75" contextFuncName="to_double" bitwidth="64" opcode="lshr" nodeLabel="3.0" nodeLatency="1" m_display="0" m_delay="3.6" m_topoIndex="35" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" linenumber="1063" fileDirectory="/mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj" functionName="to_double"/>
+      <dataInputObjs>zext</dataInputObjs>
+      <dataInputObjs>zext</dataInputObjs>
+      <dataOutputObjs>select</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="36" name="sub_ln1064" lineNumber="1064" fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" fileDirectory=".." rtlName="sub_ln1064_fu_224_p2" coreName="Adder" implIndex="fabric" control="no" opType="sub" coreId="1" contextFuncName="to_double" bitwidth="32" opcode="sub" nodeLabel="2.0" m_display="0" m_delay="2.55" m_topoIndex="22" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" linenumber="1064" fileDirectory="/mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj" functionName="to_double"/>
+      <dataInputObjs>sub</dataInputObjs>
+      <dataOutputObjs>zext</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="37" name="zext_ln1064" lineNumber="1064" fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" fileDirectory=".." rtlName="grp_fu_304_p1" coreId="2969065944" contextFuncName="to_double" bitwidth="64" opcode="zext" nodeLabel="3.0" m_display="0" m_topoIndex="36" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" linenumber="1064" fileDirectory="/mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj" functionName="to_double"/>
+      <dataInputObjs>sub</dataInputObjs>
+      <dataOutputObjs>shl</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="38" name="shl_ln1064" lineNumber="1064" fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" fileDirectory=".." rtlName="shl_64ns_32ns_64_2_1_U100" coreName="Shifter" implIndex="auto_pipe" control="no" opType="shl" coreId="75" contextFuncName="to_double" bitwidth="64" opcode="shl" nodeLabel="3.0" nodeLatency="1" m_display="0" m_delay="3.6" m_topoIndex="37" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" linenumber="1064" fileDirectory="/mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj" functionName="to_double"/>
+      <dataInputObjs>zext</dataInputObjs>
+      <dataInputObjs>zext</dataInputObjs>
+      <dataOutputObjs>select</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="39" name="m_2" lineNumber="1063" originalName="m" fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" fileDirectory=".." rtlName="m_2_fu_310_p3" coreName="Sel" implIndex="auto_sel" control="no" opType="select" coreId="73" contextFuncName="to_double" bitwidth="64" opcode="select" nodeLabel="5.0" m_display="0" m_topoIndex="38" m_clusterGroupNumber="3">
+      <inlineStackInfo fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" linenumber="1063" fileDirectory="/mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj" functionName="to_double"/>
+      <dataInputObjs>icmp</dataInputObjs>
+      <dataInputObjs>lshr</dataInputObjs>
+      <dataInputObjs>shl</dataInputObjs>
+      <dataOutputObjs>add</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="40" name="zext_ln1066" lineNumber="1066" fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" fileDirectory=".." rtlName="zext_ln1066_fu_315_p1" coreId="1307941504" contextFuncName="to_double" bitwidth="64" opcode="zext" nodeLabel="5.0" m_display="0" m_topoIndex="39" m_clusterGroupNumber="3">
+      <inlineStackInfo fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" linenumber="1066" fileDirectory="/mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj" functionName="to_double"/>
+      <dataInputObjs>bitconcatenate</dataInputObjs>
+      <dataOutputObjs>add</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="41" name="m_3" lineNumber="1066" originalName="m" fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" fileDirectory=".." rtlName="m_3_fu_318_p2" coreName="Adder" implIndex="fabric" control="no" opType="add" coreId="1" contextFuncName="to_double" bitwidth="64" opcode="add" nodeLabel="5.0" m_display="0" m_delay="3.52" m_topoIndex="40" m_clusterGroupNumber="3">
+      <inlineStackInfo fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" linenumber="1066" fileDirectory="/mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj" functionName="to_double"/>
+      <dataInputObjs>select</dataInputObjs>
+      <dataInputObjs>zext</dataInputObjs>
+      <dataOutputObjs>partselect</dataOutputObjs>
+      <dataOutputObjs>bitselect</dataOutputObjs>
+      <dataOutputObjs>partselect</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="42" name="m_4" lineNumber="1067" originalName="m" fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" fileDirectory=".." rtlName="m_4_reg_539" coreId="1308402224" contextFuncName="to_double" bitwidth="63" opcode="partselect" nodeLabel="5.0" m_display="0" m_topoIndex="41" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" linenumber="1067" fileDirectory="/mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj" functionName="to_double"/>
+      <dataInputObjs>add</dataInputObjs>
+      <dataOutputObjs>zext</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="43" name="zext_ln1067" lineNumber="1067" fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" fileDirectory=".." rtlName="zext_ln1067_fu_375_p1" coreId="1308402224" contextFuncName="to_double" bitwidth="64" opcode="zext" nodeLabel="7.0" m_display="0" m_topoIndex="48" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" linenumber="1067" fileDirectory="/mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj" functionName="to_double"/>
+      <dataInputObjs>partselect</dataInputObjs>
+      <dataOutputObjs>partset</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="44" name="p_Result_6" lineNumber="1070" originalName="__Result__" fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" fileDirectory=".." rtlName="p_Result_6_fu_334_p3" coreId="1307763976" contextFuncName="to_double" bitwidth="1" opcode="bitselect" nodeLabel="5.0" m_display="0" m_topoIndex="42" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" linenumber="1070" fileDirectory="/mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj" functionName="to_double"/>
+      <dataInputObjs>add</dataInputObjs>
+      <dataOutputObjs>select</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="45" name="select_ln1048" lineNumber="1048" fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" fileDirectory=".." rtlName="select_ln1048_fu_342_p3" coreName="Sel" implIndex="auto_sel" control="no" opType="select" coreId="73" contextFuncName="to_double" bitwidth="11" opcode="select" nodeLabel="5.0" m_display="0" m_delay="0.69" m_topoIndex="43" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" linenumber="1048" fileDirectory="/mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj" functionName="to_double"/>
+      <dataInputObjs>bitselect</dataInputObjs>
+      <dataOutputObjs>add</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="46" name="trunc_ln1048" lineNumber="1048" fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" fileDirectory=".." rtlName="trunc_ln1048_fu_169_p1" coreId="1308402224" contextFuncName="to_double" bitwidth="11" opcode="trunc" nodeLabel="1.0" m_display="0" m_topoIndex="12" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" linenumber="1048" fileDirectory="/mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj" functionName="to_double"/>
+      <dataInputObjs>cttz</dataInputObjs>
+      <dataOutputObjs>sub</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="47" name="sub_ln1070" lineNumber="1070" fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" fileDirectory=".." rtlName="sub_ln1070_fu_360_p2" coreName="TAddSub" implIndex="tadder" control="no" opType="all" coreId="10" contextFuncName="to_double" bitwidth="11" opcode="sub" nodeLabel="6.0" m_display="0" m_topoIndex="45" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" linenumber="1070" fileDirectory="/mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj" functionName="to_double"/>
+      <dataInputObjs>trunc</dataInputObjs>
+      <dataOutputObjs>add</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="48" name="add_ln1076" lineNumber="1076" fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" fileDirectory=".." rtlName="add_ln1076_fu_365_p2" coreName="TAddSub" implIndex="tadder" control="no" opType="all" coreId="10" contextFuncName="to_double" bitwidth="11" opcode="add" nodeLabel="6.0" m_display="0" m_delay="3.75" m_topoIndex="46" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" linenumber="1076" fileDirectory="/mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj" functionName="to_double"/>
+      <dataInputObjs>sub</dataInputObjs>
+      <dataInputObjs>select</dataInputObjs>
+      <dataOutputObjs>bitconcatenate</dataOutputObjs>
+      <dataOutputObjs>icmp</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="49" name="tmp_3" lineNumber="1076" fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" fileDirectory=".." rtlName="tmp_3_fu_378_p3" coreId="1330007625" contextFuncName="to_double" bitwidth="12" opcode="bitconcatenate" nodeLabel="7.0" m_display="0" m_topoIndex="49" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" linenumber="1076" fileDirectory="/mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj" functionName="to_double"/>
+      <dataInputObjs>bitselect</dataInputObjs>
+      <dataInputObjs>add</dataInputObjs>
+      <dataOutputObjs>partset</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="50" name="p_Result_10" lineNumber="1076" originalName="__Result__" fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" fileDirectory=".." rtlName="p_Result_10_fu_384_p5" coreId="2967597235" contextFuncName="to_double" bitwidth="64" opcode="partset" nodeLabel="7.0" m_display="0" m_topoIndex="50" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" linenumber="1076" fileDirectory="/mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj" functionName="to_double"/>
+      <dataInputObjs>zext</dataInputObjs>
+      <dataInputObjs>bitconcatenate</dataInputObjs>
+      <dataOutputObjs>bitcast</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="51" name="bitcast_ln756" lineNumber="756" fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_common.h" fileDirectory=".." rtlName="grp_fu_101_p0" coreId="2967265539" contextFuncName="rawBitsToDouble" bitwidth="64" opcode="bitcast" nodeLabel="7.0" m_display="0" m_topoIndex="51" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_common.h" linenumber="756" fileDirectory="/mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj" functionName="rawBitsToDouble"/>
+      <dataInputObjs>partset</dataInputObjs>
+      <dataOutputObjs>dcmp</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="52" name="tmp_46" lineNumber="1066" fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" fileDirectory=".." rtlName="tmp_46_reg_549" coreId="1308281776" contextFuncName="to_double" bitwidth="52" opcode="partselect" nodeLabel="5.0" m_display="0" m_topoIndex="44" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" linenumber="1066" fileDirectory="/mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj" functionName="to_double"/>
+      <dataInputObjs>add</dataInputObjs>
+      <dataOutputObjs>icmp</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="53" name="notlhs" lineNumber="1076" fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" fileDirectory=".." rtlName="notlhs_fu_401_p2" coreName="Cmp" implIndex="auto" control="no" opType="icmp" coreId="9" contextFuncName="to_double" bitwidth="1" opcode="icmp" nodeLabel="7.0" m_display="0" m_delay="1.88" m_topoIndex="52" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" linenumber="1076" fileDirectory="/mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj" functionName="to_double"/>
+      <dataInputObjs>add</dataInputObjs>
+      <dataOutputObjs>or</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="54" name="notrhs" lineNumber="1066" fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" fileDirectory=".." rtlName="notrhs_fu_370_p2" coreName="Cmp" implIndex="auto" control="no" opType="icmp" coreId="9" contextFuncName="to_double" bitwidth="1" opcode="icmp" nodeLabel="6.0" m_display="0" m_delay="2.89" m_topoIndex="47" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" linenumber="1066" fileDirectory="/mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj" functionName="to_double"/>
+      <dataInputObjs>partselect</dataInputObjs>
+      <dataOutputObjs>or</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="55" name="empty" lineNumber="1066" fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" fileDirectory=".." rtlName="empty_fu_406_p2" coreName="LogicGate" implIndex="auto" control="no" opType="or" coreId="74" contextFuncName="to_double" bitwidth="1" opcode="or" nodeLabel="10.0" m_display="0" m_topoIndex="54" m_clusterGroupNumber="4">
+      <inlineStackInfo fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" linenumber="1066" fileDirectory="/mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj" functionName="to_double"/>
+      <dataInputObjs>icmp</dataInputObjs>
+      <dataInputObjs>icmp</dataInputObjs>
+      <dataOutputObjs>and</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="56" name="tmp" lineNumber="756" fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_common.h" fileDirectory=".." rtlName="dcmp_64ns_64ns_1_4_no_dsp_1_U98" coreName="DCompare" implIndex="auto" control="no" opType="dcmp" coreId="38" contextFuncName="rawBitsToDouble" bitwidth="1" opcode="dcmp" nodeLabel="7.0" nodeLatency="3" m_display="0" m_delay="3.12" m_topoIndex="53" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_common.h" linenumber="756" fileDirectory="/mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj" functionName="rawBitsToDouble"/>
+      <dataInputObjs>bitcast</dataInputObjs>
+      <dataOutputObjs>and</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="57" name="empty_689" lineNumber="1066" fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" fileDirectory=".." rtlName="empty_689_fu_410_p2" coreName="LogicGate" implIndex="auto" control="no" opType="and" coreId="74" contextFuncName="to_double" bitwidth="1" opcode="and" nodeLabel="10.0" m_display="0" m_topoIndex="55" m_clusterGroupNumber="4">
+      <inlineStackInfo fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" linenumber="1066" fileDirectory="/mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj" functionName="to_double"/>
+      <dataInputObjs>or</dataInputObjs>
+      <dataInputObjs>dcmp</dataInputObjs>
+      <dataOutputObjs>and</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="58" name="icmp_ln1040" lineNumber="1040" fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" fileDirectory=".." rtlName="icmp_ln1040_fu_173_p2" coreName="Cmp" implIndex="auto" control="no" opType="icmp" coreId="9" contextFuncName="to_double" bitwidth="1" opcode="icmp" nodeLabel="1.0" m_display="0" m_delay="1.55" m_topoIndex="13" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" linenumber="1040" fileDirectory="/mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj" functionName="to_double"/>
+      <dataInputObjs>read</dataInputObjs>
+      <dataOutputObjs>and</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="59" name="sel_tmp1" lineNumber="1040" fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" fileDirectory=".." rtlName="sel_tmp1_fu_416_p2" coreName="LogicGate" implIndex="auto" control="no" opType="and" coreId="74" contextFuncName="to_double" bitwidth="1" opcode="and" nodeLabel="10.0" m_display="0" m_delay="0.97" m_topoIndex="56" m_clusterGroupNumber="4">
+      <inlineStackInfo fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h" linenumber="1040" fileDirectory="/mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj" functionName="to_double"/>
+      <dataInputObjs>icmp</dataInputObjs>
+      <dataInputObjs>and</dataInputObjs>
+      <dataOutputObjs>zext</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="60" name="zext_ln110" lineNumber="110" fileName="firmware/myproject.cpp" fileDirectory=".." rtlName="zext_ln110_fu_421_p1" coreId="1308477200" contextFuncName="inference" bitwidth="32" opcode="zext" nodeLabel="10.0" m_display="0" m_topoIndex="57" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="firmware/myproject.cpp" linenumber="110" fileDirectory="/mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj" functionName="inference"/>
+      <dataInputObjs>and</dataInputObjs>
+      <dataOutputObjs>write</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="61" name="result_write_ln110" lineNumber="110" fileName="firmware/myproject.cpp" fileDirectory=".." coreId="69" contextFuncName="inference" opcode="write" nodeLabel="10.0" m_display="0" m_topoIndex="58" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="firmware/myproject.cpp" linenumber="110" fileDirectory="/mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj" functionName="inference"/>
+      <dataInputObjs>zext</dataInputObjs>
+      <dataOutputObjs>result</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="62" name="_ln0" coreId="1308402224" opcode="ret" nodeLabel="10.0" m_display="0" m_topoIndex="59" m_clusterGroupNumber="-1"/>
+    <fileValidLineNumbers fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h">
+      <validLinenumbers>1041</validLinenumbers>
+      <validLinenumbers>1044</validLinenumbers>
+      <validLinenumbers>1043</validLinenumbers>
+      <validLinenumbers>1049</validLinenumbers>
+      <validLinenumbers>1051</validLinenumbers>
+      <validLinenumbers>1052</validLinenumbers>
+      <validLinenumbers>1054</validLinenumbers>
+      <validLinenumbers>1062</validLinenumbers>
+      <validLinenumbers>1063</validLinenumbers>
+      <validLinenumbers>1064</validLinenumbers>
+      <validLinenumbers>1066</validLinenumbers>
+      <validLinenumbers>1067</validLinenumbers>
+      <validLinenumbers>1070</validLinenumbers>
+      <validLinenumbers>1048</validLinenumbers>
+      <validLinenumbers>1076</validLinenumbers>
+      <validLinenumbers>1040</validLinenumbers>
+    </fileValidLineNumbers>
+    <fileValidLineNumbers fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_int_base.h">
+      <validLinenumbers>1197</validLinenumbers>
+      <validLinenumbers>1198</validLinenumbers>
+      <validLinenumbers>1199</validLinenumbers>
+    </fileValidLineNumbers>
+    <fileValidLineNumbers fileName="firmware/myproject.cpp">
+      <validLinenumbers>106</validLinenumbers>
+      <validLinenumbers>110</validLinenumbers>
+    </fileValidLineNumbers>
+    <fileValidLineNumbers fileName="/home/fitba/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_common.h">
+      <validLinenumbers>756</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <ScheduleInfo time="0"/>
+  <ScheduleInfo time="1"/>
+  <ScheduleInfo time="2"/>
+  <ScheduleInfo time="3"/>
+  <ScheduleInfo time="4"/>
+  <ScheduleInfo time="5"/>
+  <ScheduleInfo time="6"/>
+  <ScheduleInfo time="7"/>
+  <ScheduleInfo time="8"/>
+  <ScheduleInfo time="9"/>
+  <ScheduleInfo time="10"/>
+  <regnodes realName="zext_ln1062_reg_508">
+    <nodeIds>31</nodeIds>
+  </regnodes>
+  <regnodes realName="lsb_index_reg_477">
+    <nodeIds>14</nodeIds>
+  </regnodes>
+  <regnodes realName="notrhs_reg_560">
+    <nodeIds>54</nodeIds>
+  </regnodes>
+  <regnodes realName="tmp_V_reg_438">
+    <nodeIds>6</nodeIds>
+  </regnodes>
+  <regnodes realName="icmp_ln1063_reg_514">
+    <nodeIds>32</nodeIds>
+  </regnodes>
+  <regnodes realName="select_ln1048_reg_544">
+    <nodeIds>45</nodeIds>
+  </regnodes>
+  <regnodes realName="add_ln1076_reg_554">
+    <nodeIds>48</nodeIds>
+  </regnodes>
+  <regnodes realName="add_ln1063_reg_493">
+    <nodeIds>33</nodeIds>
+  </regnodes>
+  <regnodes realName="tmp_6_reg_483">
+    <nodeIds>15</nodeIds>
+  </regnodes>
+  <regnodes realName="zext_ln1064_reg_524">
+    <nodeIds>37</nodeIds>
+  </regnodes>
+  <regnodes realName="or_ln_reg_503">
+    <nodeIds>30</nodeIds>
+  </regnodes>
+  <regnodes realName="notlhs_reg_570">
+    <nodeIds>53</nodeIds>
+  </regnodes>
+  <regnodes realName="m_4_reg_539">
+    <nodeIds>42</nodeIds>
+  </regnodes>
+  <regnodes realName="icmp_ln1040_reg_472">
+    <nodeIds>58</nodeIds>
+  </regnodes>
+  <regnodes realName="out_data_data_reg_426">
+    <nodeIds>4</nodeIds>
+  </regnodes>
+  <regnodes realName="zext_ln1063_reg_519">
+    <nodeIds>34</nodeIds>
+  </regnodes>
+  <regnodes realName="trunc_ln1049_reg_457">
+    <nodeIds>13</nodeIds>
+  </regnodes>
+  <regnodes realName="lshr_ln1063_reg_529">
+    <nodeIds>35</nodeIds>
+  </regnodes>
+  <regnodes realName="p_Result_8_reg_432">
+    <nodeIds>5</nodeIds>
+  </regnodes>
+  <regnodes realName="sub_ln1049_reg_450">
+    <nodeIds>12</nodeIds>
+  </regnodes>
+  <regnodes realName="bitcast_ln756_reg_565">
+    <nodeIds>51</nodeIds>
+  </regnodes>
+  <regnodes realName="tmp_V_2_reg_443">
+    <nodeIds>7</nodeIds>
+  </regnodes>
+  <regnodes realName="tmp_46_reg_549">
+    <nodeIds>52</nodeIds>
+  </regnodes>
+  <regnodes realName="trunc_ln1052_reg_462">
+    <nodeIds>17</nodeIds>
+  </regnodes>
+  <regnodes realName="icmp_ln1052_reg_488">
+    <nodeIds>22</nodeIds>
+  </regnodes>
+  <regnodes realName="sub_ln1064_reg_498">
+    <nodeIds>36</nodeIds>
+  </regnodes>
+  <regnodes realName="trunc_ln1048_reg_467">
+    <nodeIds>46</nodeIds>
+  </regnodes>
+  <regnodes realName="shl_ln1064_reg_534">
+    <nodeIds>38</nodeIds>
+  </regnodes>
+  <expressionNodes realName="tmp_46_fu_350">
+    <nodeIds>52</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="p_Result_3_fu_257">
+    <nodeIds>27</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="trunc_ln1048_fu_169">
+    <nodeIds>46</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="p_Result_6_fu_334">
+    <nodeIds>44</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="trunc_ln1049_fu_161">
+    <nodeIds>13</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="and_ln1054_fu_264">
+    <nodeIds>28</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="sub_ln1052_fu_193">
+    <nodeIds>18</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="select_ln1048_fu_342">
+    <nodeIds>45</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln1052_fu_213">
+    <nodeIds>22</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="zext_ln1062_fu_284">
+    <nodeIds>31</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="m_2_fu_310">
+    <nodeIds>39</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="zext_ln1052_fu_198">
+    <nodeIds>19</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="sel_tmp1_fu_416">
+    <nodeIds>59</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="a_fu_234">
+    <nodeIds>23</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="p_Result_8_fu_106">
+    <nodeIds>5</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="l_fu_147">
+    <nodeIds>11</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="p_Result_5_fu_208">
+    <nodeIds>21</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="lshr_ln1052_fu_202">
+    <nodeIds>20</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="p_Result_9_fu_135">
+    <nodeIds>9</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln1040_fu_173">
+    <nodeIds>58</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="or_ln1054_fu_270">
+    <nodeIds>29</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="p_Result_s_fu_125">
+    <nodeIds>8</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="tmp_7_fu_239">
+    <nodeIds>24</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="sext_ln1198_fu_143">
+    <nodeIds>10</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="m_4_fu_324">
+    <nodeIds>42</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="tmp_3_fu_378">
+    <nodeIds>49</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="trunc_ln1052_fu_165">
+    <nodeIds>17</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="zext_ln110_fu_421">
+    <nodeIds>60</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="notrhs_fu_370">
+    <nodeIds>54</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="sub_ln1049_fu_155">
+    <nodeIds>12</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="tmp_6_fu_183">
+    <nodeIds>15</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="sub_ln1064_fu_224">
+    <nodeIds>36</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="add_ln1076_fu_365">
+    <nodeIds>48</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="sub_ln1070_fu_360">
+    <nodeIds>47</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="tmp_V_2_fu_120">
+    <nodeIds>7</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="empty_fu_406">
+    <nodeIds>55</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="notlhs_fu_401">
+    <nodeIds>53</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="zext_ln1064_fu_301">
+    <nodeIds>37</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="add_ln1054_fu_252">
+    <nodeIds>26</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="add_ln1063_fu_219">
+    <nodeIds>33</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="bitcast_ln756_fu_396">
+    <nodeIds>51</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="p_Result_10_fu_384">
+    <nodeIds>50</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="lsb_index_fu_178">
+    <nodeIds>14</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="m_3_fu_318">
+    <nodeIds>41</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="tmp_V_fu_114">
+    <nodeIds>6</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="zext_ln1067_fu_375">
+    <nodeIds>43</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="xor_ln1054_fu_246">
+    <nodeIds>25</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="empty_689_fu_410">
+    <nodeIds>57</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="zext_ln1063_fu_292">
+    <nodeIds>34</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="or_ln_fu_276">
+    <nodeIds>30</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="zext_ln1066_fu_315">
+    <nodeIds>40</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln1063_fu_287">
+    <nodeIds>32</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln1051_fu_229">
+    <nodeIds>16</nodeIds>
+  </expressionNodes>
+  <moduleNodes realName="grp_fu_304">
+    <nodeIds>38</nodeIds>
+  </moduleNodes>
+  <moduleNodes realName="grp_fu_101">
+    <nodeIds>56</nodeIds>
+  </moduleNodes>
+  <moduleNodes realName="grp_fu_295">
+    <nodeIds>35</nodeIds>
+  </moduleNodes>
+  <ioNodes realName="write_ln110_write_fu_94">
+    <nodeIds>61</nodeIds>
+  </ioNodes>
+  <ioNodes realName="out_data_data_read_fu_88">
+    <nodeIds>4</nodeIds>
+  </ioNodes>
+  <ioPorts name="internal_output">
+    <contents name="read">
+      <nodeIds>4</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="result">
+    <contents name="write">
+      <nodeIds>61</nodeIds>
+    </contents>
+  </ioPorts>
+  <fsm>
+    <states id="1">
+      <operations id="4" stage="1" latency="1"/>
+      <operations id="5" stage="1" latency="1"/>
+      <operations id="6" stage="1" latency="1"/>
+    </states>
+    <states id="2">
+      <operations id="7" stage="1" latency="1"/>
+      <operations id="8" stage="1" latency="1"/>
+      <operations id="9" stage="1" latency="1"/>
+      <operations id="10" stage="1" latency="1"/>
+      <operations id="11" stage="1" latency="1"/>
+      <operations id="12" stage="1" latency="1"/>
+      <operations id="13" stage="1" latency="1"/>
+      <operations id="17" stage="1" latency="1"/>
+      <operations id="46" stage="1" latency="1"/>
+      <operations id="58" stage="1" latency="1"/>
+    </states>
+    <states id="3">
+      <operations id="14" stage="1" latency="1"/>
+      <operations id="15" stage="1" latency="1"/>
+      <operations id="18" stage="1" latency="1"/>
+      <operations id="19" stage="1" latency="1"/>
+      <operations id="20" stage="1" latency="1"/>
+      <operations id="21" stage="1" latency="1"/>
+      <operations id="22" stage="1" latency="1"/>
+      <operations id="33" stage="1" latency="1"/>
+      <operations id="36" stage="1" latency="1"/>
+    </states>
+    <states id="4">
+      <operations id="16" stage="1" latency="1"/>
+      <operations id="23" stage="1" latency="1"/>
+      <operations id="24" stage="1" latency="1"/>
+      <operations id="25" stage="1" latency="1"/>
+      <operations id="26" stage="1" latency="1"/>
+      <operations id="27" stage="1" latency="1"/>
+      <operations id="28" stage="1" latency="1"/>
+      <operations id="29" stage="1" latency="1"/>
+      <operations id="30" stage="1" latency="1"/>
+      <operations id="31" stage="1" latency="1"/>
+      <operations id="32" stage="1" latency="1"/>
+      <operations id="34" stage="1" latency="1"/>
+      <operations id="35" stage="2" latency="2"/>
+      <operations id="37" stage="1" latency="1"/>
+      <operations id="38" stage="2" latency="2"/>
+    </states>
+    <states id="5">
+      <operations id="35" stage="1" latency="2"/>
+      <operations id="38" stage="1" latency="2"/>
+    </states>
+    <states id="6">
+      <operations id="39" stage="1" latency="1"/>
+      <operations id="40" stage="1" latency="1"/>
+      <operations id="41" stage="1" latency="1"/>
+      <operations id="42" stage="1" latency="1"/>
+      <operations id="44" stage="1" latency="1"/>
+      <operations id="45" stage="1" latency="1"/>
+      <operations id="52" stage="1" latency="1"/>
+    </states>
+    <states id="7">
+      <operations id="47" stage="1" latency="1"/>
+      <operations id="48" stage="1" latency="1"/>
+      <operations id="54" stage="1" latency="1"/>
+    </states>
+    <states id="8">
+      <operations id="43" stage="1" latency="1"/>
+      <operations id="49" stage="1" latency="1"/>
+      <operations id="50" stage="1" latency="1"/>
+      <operations id="51" stage="1" latency="1"/>
+      <operations id="53" stage="1" latency="1"/>
+      <operations id="56" stage="4" latency="4"/>
+    </states>
+    <states id="9">
+      <operations id="56" stage="3" latency="4"/>
+    </states>
+    <states id="10">
+      <operations id="56" stage="2" latency="4"/>
+    </states>
+    <states id="11">
+      <operations id="3" stage="1" latency="1"/>
+      <operations id="55" stage="1" latency="1"/>
+      <operations id="56" stage="1" latency="4"/>
+      <operations id="57" stage="1" latency="1"/>
+      <operations id="59" stage="1" latency="1"/>
+      <operations id="60" stage="1" latency="1"/>
+      <operations id="61" stage="1" latency="1"/>
+      <operations id="62" stage="1" latency="1"/>
+    </states>
+    <transitions inState="1" outState="2">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="2" outState="3">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="3" outState="4">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="4" outState="5">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="5" outState="6">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="6" outState="7">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="7" outState="8">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="8" outState="9">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="9" outState="10">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="10" outState="11">
+      <condition id="-1"/>
+    </transitions>
+  </fsm>
+  <CFGRegionsRoot>
+    <cfgRegions mId="1" mTag="Block_inference_for_cond_i_exit13_proc3" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="10" mMaxLatency="10">
+      <basicBlocks>63</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+  </CFGRegionsRoot>
+</cdfg:DBCdfg>

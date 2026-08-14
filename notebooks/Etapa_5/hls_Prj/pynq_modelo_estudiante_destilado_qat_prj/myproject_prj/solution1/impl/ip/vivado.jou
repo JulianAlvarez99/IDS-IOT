@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 04:59:54 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Fri Jun 26 18:55:00 2026
+# Process ID: 81287
+# Current directory: /mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj/myproject_prj/solution1/impl/ip
+# Command line: vivado -notrace -mode batch -source run_ippack.tcl
+# Log file: /mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj/myproject_prj/solution1/impl/ip/vivado.log
+# Journal file: /mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj/myproject_prj/solution1/impl/ip/vivado.jou
+# Running On: seaman-fitba2, OS: Linux, CPU Frequency: 2834.090 MHz, CPU Physical cores: 32, Host memory: 64938 MB
+#-----------------------------------------------------------
+source run_ippack.tcl -notrace

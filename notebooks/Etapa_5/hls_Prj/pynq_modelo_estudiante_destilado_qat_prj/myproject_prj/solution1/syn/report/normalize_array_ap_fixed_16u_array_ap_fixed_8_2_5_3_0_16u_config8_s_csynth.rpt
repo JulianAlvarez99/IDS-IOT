@@ -1,0 +1,201 @@
+
+
+================================================================
+== Vitis HLS Report for 'normalize_array_ap_fixed_16u_array_ap_fixed_8_2_5_3_0_16u_config8_s'
+================================================================
+* Date:           Fri Jun 26 18:52:44 2026
+
+* Version:        2022.2 (Build 3670227 on Oct 13 2022)
+* Project:        myproject_prj
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  5.00 ns|  4.170 ns|     0.62 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline|
+    |   min   |   max   |    min    |    max    | min | max |   Type  |
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |       13|       13|  65.000 ns|  65.000 ns|   13|   13|       no|
+    +---------+---------+-----------+-----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    -|       -|      -|    -|
+|Expression       |        -|    -|       0|    307|    -|
+|FIFO             |        -|    -|       -|      -|    -|
+|Instance         |        -|    0|       0|     41|    -|
+|Memory           |        -|    -|       -|      -|    -|
+|Multiplexer      |        -|    -|       -|    214|    -|
+|Register         |        -|    -|     277|      -|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |        0|    0|     277|    562|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      280|  220|  106400|  53200|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |        0|    0|      ~0|      1|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    +-----------------------+-------------------+---------+----+---+----+-----+
+    |        Instance       |       Module      | BRAM_18K| DSP| FF| LUT| URAM|
+    +-----------------------+-------------------+---------+----+---+----+-----+
+    |mul_8s_8ns_14_1_1_U66  |mul_8s_8ns_14_1_1  |        0|   0|  0|  41|    0|
+    +-----------------------+-------------------+---------+----+---+----+-----+
+    |Total                  |                   |        0|   0|  0|  41|    0|
+    +-----------------------+-------------------+---------+----+---+----+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +----------------------+----------+----+---+----+------------+------------+
+    |     Variable Name    | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +----------------------+----------+----+---+----+------------+------------+
+    |add_ln1347_fu_730_p2  |         +|   0|  0|  17|          14|          13|
+    |ret_V_29_fu_647_p2    |         +|   0|  0|  14|          14|          12|
+    |ret_V_30_fu_439_p2    |         +|   0|  0|  17|          14|          14|
+    |ret_V_31_fu_459_p2    |         +|   0|  0|  17|          14|          13|
+    |ret_V_32_fu_479_p2    |         +|   0|  0|  17|          14|          13|
+    |ret_V_33_fu_499_p2    |         +|   0|  0|  17|          14|          13|
+    |ret_V_34_fu_519_p2    |         +|   0|  0|  17|          14|          10|
+    |ret_V_35_fu_403_p2    |         +|   0|  0|  14|          14|          14|
+    |ret_V_36_fu_539_p2    |         +|   0|  0|  17|          14|          13|
+    |ret_V_37_fu_559_p2    |         +|   0|  0|  17|          14|          14|
+    |ret_V_38_fu_579_p2    |         +|   0|  0|  17|          14|          12|
+    |ret_V_39_fu_599_p2    |         +|   0|  0|  17|          14|          14|
+    |ret_V_40_fu_663_p2    |         +|   0|  0|  17|          14|          12|
+    |ret_V_41_fu_746_p2    |         +|   0|  0|  17|          14|          13|
+    |ret_V_42_fu_707_p2    |         +|   0|  0|  14|          14|          12|
+    |ret_V_fu_419_p2       |         +|   0|  0|  17|          14|          14|
+    |r_V_35_fu_641_p2      |         -|   0|  0|  14|          14|          14|
+    |r_V_42_fu_397_p2      |         -|   0|  0|  14|          14|          14|
+    |r_V_49_fu_701_p2      |         -|   0|  0|  14|          14|          14|
+    |ap_block_state1       |        or|   0|  0|   2|           1|           1|
+    +----------------------+----------+----+---+----+------------+------------+
+    |Total                 |          |   0|  0| 307|         267|         249|
+    +----------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +------------------+----+-----------+-----+-----------+
+    |       Name       | LUT| Input Size| Bits| Total Bits|
+    +------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm         |  65|         15|    1|         15|
+    |ap_done           |   9|          2|    1|          2|
+    |grp_fu_183_p0     |  65|         13|    8|        104|
+    |grp_fu_183_p1     |  48|          9|    8|         72|
+    |layer6_out_blk_n  |   9|          2|    1|          2|
+    |layer8_out_blk_n  |   9|          2|    1|          2|
+    |real_start        |   9|          2|    1|          2|
+    +------------------+----+-----------+-----+-----------+
+    |Total             | 214|         45|   21|        199|
+    +------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +------------------------+----+----+-----+-----------+
+    |          Name          | FF | LUT| Bits| Const Bits|
+    +------------------------+----+----+-----+-----------+
+    |a_V_14_reg_795          |   8|   0|    8|          0|
+    |a_V_15_reg_800          |   8|   0|    8|          0|
+    |a_V_16_reg_805          |   8|   0|    8|          0|
+    |a_V_17_reg_810          |   8|   0|    8|          0|
+    |a_V_18_reg_815          |   8|   0|    8|          0|
+    |a_V_19_reg_820          |   8|   0|    8|          0|
+    |a_V_20_reg_825          |   8|   0|    8|          0|
+    |a_V_21_reg_830          |   8|   0|    8|          0|
+    |a_V_22_reg_835          |   8|   0|    8|          0|
+    |a_V_23_reg_840          |   8|   0|    8|          0|
+    |a_V_24_reg_790          |   8|   0|    8|          0|
+    |a_V_reg_785             |   8|   0|    8|          0|
+    |ap_CS_fsm               |  14|   0|   14|          0|
+    |ap_done_reg             |   1|   0|    1|          0|
+    |reg_192                 |  14|   0|   14|          0|
+    |start_once_reg          |   1|   0|    1|          0|
+    |tmp_40_reg_851          |   8|   0|    8|          0|
+    |tmp_41_reg_856          |   7|   0|    7|          0|
+    |tmp_42_reg_861          |   8|   0|    8|          0|
+    |tmp_43_reg_866          |   8|   0|    8|          0|
+    |tmp_reg_845             |   8|   0|    8|          0|
+    |trunc_ln818_10_reg_907  |   8|   0|    8|          0|
+    |trunc_ln818_11_reg_912  |   8|   0|    8|          0|
+    |trunc_ln818_12_reg_917  |   8|   0|    8|          0|
+    |trunc_ln818_13_reg_922  |   8|   0|    8|          0|
+    |trunc_ln818_14_reg_932  |   8|   0|    8|          0|
+    |trunc_ln818_16_reg_937  |   8|   0|    8|          0|
+    |trunc_ln818_2_reg_927   |   8|   0|    8|          0|
+    |trunc_ln818_3_reg_882   |   8|   0|    8|          0|
+    |trunc_ln818_4_reg_887   |   8|   0|    8|          0|
+    |trunc_ln818_5_reg_892   |   8|   0|    8|          0|
+    |trunc_ln818_7_reg_897   |   8|   0|    8|          0|
+    |trunc_ln818_8_reg_902   |   8|   0|    8|          0|
+    |trunc_ln818_9_reg_872   |   8|   0|    8|          0|
+    |trunc_ln_reg_877        |   8|   0|    8|          0|
+    +------------------------+----+----+-----+-----------+
+    |Total                   | 277|   0|  277|          0|
+    +------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++---------------------------+-----+-----+------------+-----------------------------------------------------------------------+--------------+
+|         RTL Ports         | Dir | Bits|  Protocol  |                             Source Object                             |    C Type    |
++---------------------------+-----+-----+------------+-----------------------------------------------------------------------+--------------+
+|ap_clk                     |   in|    1|  ap_ctrl_hs|  normalize<array<ap_fixed,16u>,array<ap_fixed<8,2,5,3,0>,16u>,config8>|  return value|
+|ap_rst                     |   in|    1|  ap_ctrl_hs|  normalize<array<ap_fixed,16u>,array<ap_fixed<8,2,5,3,0>,16u>,config8>|  return value|
+|ap_start                   |   in|    1|  ap_ctrl_hs|  normalize<array<ap_fixed,16u>,array<ap_fixed<8,2,5,3,0>,16u>,config8>|  return value|
+|start_full_n               |   in|    1|  ap_ctrl_hs|  normalize<array<ap_fixed,16u>,array<ap_fixed<8,2,5,3,0>,16u>,config8>|  return value|
+|ap_done                    |  out|    1|  ap_ctrl_hs|  normalize<array<ap_fixed,16u>,array<ap_fixed<8,2,5,3,0>,16u>,config8>|  return value|
+|ap_continue                |   in|    1|  ap_ctrl_hs|  normalize<array<ap_fixed,16u>,array<ap_fixed<8,2,5,3,0>,16u>,config8>|  return value|
+|ap_idle                    |  out|    1|  ap_ctrl_hs|  normalize<array<ap_fixed,16u>,array<ap_fixed<8,2,5,3,0>,16u>,config8>|  return value|
+|ap_ready                   |  out|    1|  ap_ctrl_hs|  normalize<array<ap_fixed,16u>,array<ap_fixed<8,2,5,3,0>,16u>,config8>|  return value|
+|start_out                  |  out|    1|  ap_ctrl_hs|  normalize<array<ap_fixed,16u>,array<ap_fixed<8,2,5,3,0>,16u>,config8>|  return value|
+|start_write                |  out|    1|  ap_ctrl_hs|  normalize<array<ap_fixed,16u>,array<ap_fixed<8,2,5,3,0>,16u>,config8>|  return value|
+|layer6_out_dout            |   in|  128|     ap_fifo|                                                             layer6_out|       pointer|
+|layer6_out_num_data_valid  |   in|    2|     ap_fifo|                                                             layer6_out|       pointer|
+|layer6_out_fifo_cap        |   in|    2|     ap_fifo|                                                             layer6_out|       pointer|
+|layer6_out_empty_n         |   in|    1|     ap_fifo|                                                             layer6_out|       pointer|
+|layer6_out_read            |  out|    1|     ap_fifo|                                                             layer6_out|       pointer|
+|layer8_out_din             |  out|  128|     ap_fifo|                                                             layer8_out|       pointer|
+|layer8_out_num_data_valid  |   in|    2|     ap_fifo|                                                             layer8_out|       pointer|
+|layer8_out_fifo_cap        |   in|    2|     ap_fifo|                                                             layer8_out|       pointer|
+|layer8_out_full_n          |   in|    1|     ap_fifo|                                                             layer8_out|       pointer|
+|layer8_out_write           |  out|    1|     ap_fifo|                                                             layer8_out|       pointer|
++---------------------------+-----+-----+------------+-----------------------------------------------------------------------+--------------+
+

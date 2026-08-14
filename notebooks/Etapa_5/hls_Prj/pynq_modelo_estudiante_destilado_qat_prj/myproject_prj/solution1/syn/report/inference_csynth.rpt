@@ -1,0 +1,146 @@
+
+
+================================================================
+== Vitis HLS Report for 'inference'
+================================================================
+* Date:           Fri Jun 26 18:52:45 2026
+
+* Version:        2022.2 (Build 3670227 on Oct 13 2022)
+* Project:        myproject_prj
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  5.00 ns|  7.898 ns|     0.62 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+----------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline |
+    |   min   |   max   |    min   |    max   | min | max |   Type   |
+    +---------+---------+----------+----------+-----+-----+----------+
+    |      113|      114|  0.893 us|  0.900 us|   72|   72|  dataflow|
+    +---------+---------+----------+----------+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        +--------------------------------------------+-----------------------------------------+---------+---------+-----------+-----------+-----+-----+----------+
+        |                                            |                                         |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline |
+        |                  Instance                  |                  Module                 |   min   |   max   |    min    |    max    | min | max |   Type   |
+        +--------------------------------------------+-----------------------------------------+---------+---------+-----------+-----------+-----+-----+----------+
+        |Loop_VITIS_LOOP_86_1_proc1_U0               |Loop_VITIS_LOOP_86_1_proc1               |       26|       26|   0.130 us|   0.130 us|   26|   26|        no|
+        |Block_inference_for_cond_i_exit_proc2_U0    |Block_inference_for_cond_i_exit_proc2    |       17|       17|  85.000 ns|  85.000 ns|   17|   17|        no|
+        |myproject_U0                                |myproject                                |       87|       88|   0.687 us|   0.695 us|   72|   72|  dataflow|
+        |Block_inference_for_cond_i_exit13_proc3_U0  |Block_inference_for_cond_i_exit13_proc3  |       10|       10|  50.000 ns|  50.000 ns|   10|   10|        no|
+        +--------------------------------------------+-----------------------------------------+---------+---------+-----------+-----------+-----+-----+----------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    -|       -|      -|    -|
+|Expression       |        -|    -|       0|      2|    -|
+|FIFO             |        -|    -|     297|    206|    -|
+|Instance         |        9|    0|    5946|  10317|    -|
+|Memory           |        -|    -|       -|      -|    -|
+|Multiplexer      |        -|    -|       -|      -|    -|
+|Register         |        -|    -|       -|      -|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |        9|    0|    6243|  10525|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      280|  220|  106400|  53200|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |        3|    0|       5|     19|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    +--------------------------------------------+-----------------------------------------+---------+----+------+------+-----+
+    |                  Instance                  |                  Module                 | BRAM_18K| DSP|  FF  |  LUT | URAM|
+    +--------------------------------------------+-----------------------------------------+---------+----+------+------+-----+
+    |Block_inference_for_cond_i_exit13_proc3_U0  |Block_inference_for_cond_i_exit13_proc3  |        0|   0|   760|   839|    0|
+    |Block_inference_for_cond_i_exit_proc2_U0    |Block_inference_for_cond_i_exit_proc2    |        0|   0|   156|   133|    0|
+    |Loop_VITIS_LOOP_86_1_proc1_U0               |Loop_VITIS_LOOP_86_1_proc1               |        0|   0|   716|   673|    0|
+    |myproject_U0                                |myproject                                |        9|   0|  4314|  8672|    0|
+    +--------------------------------------------+-----------------------------------------+---------+----+------+------+-----+
+    |Total                                       |                                         |        9|   0|  5946| 10317|    0|
+    +--------------------------------------------+-----------------------------------------+---------+----+------+------+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    +----------------------+---------+----+----+-----+------+-----+---------+
+    |         Name         | BRAM_18K| FF | LUT| URAM| Depth| Bits| Size:D*B|
+    +----------------------+---------+----+----+-----+------+-----+---------+
+    |features_in_data_V_U  |        0|  99|   0|    -|    18|    8|      144|
+    |internal_input_U      |        0|  99|   0|    -|     2|  144|      288|
+    |internal_output_U     |        0|  99|   0|    -|     2|    8|       16|
+    +----------------------+---------+----+----+-----+------+-----+---------+
+    |Total                 |        0| 297|   0|    0|    22|  160|      448|
+    +----------------------+---------+----+----+-----+------+-----+---------+
+
+    * Expression: 
+    +--------------+----------+----+---+----+------------+------------+
+    | Variable Name| Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +--------------+----------+----+---+----+------------+------------+
+    |ap_idle       |       and|   0|  0|   2|           1|           1|
+    +--------------+----------+----+---+----+------------+------------+
+    |Total         |          |   0|  0|   2|           1|           1|
+    +--------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    N/A
+
+    * Register: 
+    N/A
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++----------------+-----+-----+------------+------------------+--------------+
+|    RTL Ports   | Dir | Bits|  Protocol  |   Source Object  |    C Type    |
++----------------+-----+-----+------------+------------------+--------------+
+|input_r_TDATA   |   in|   32|        axis|  input_r_V_data_V|       pointer|
+|input_r_TKEEP   |   in|    4|        axis|  input_r_V_keep_V|       pointer|
+|input_r_TSTRB   |   in|    4|        axis|  input_r_V_strb_V|       pointer|
+|input_r_TUSER   |   in|    2|        axis|  input_r_V_user_V|       pointer|
+|input_r_TLAST   |   in|    1|        axis|  input_r_V_last_V|       pointer|
+|input_r_TID     |   in|    5|        axis|    input_r_V_id_V|       pointer|
+|input_r_TDEST   |   in|    6|        axis|  input_r_V_dest_V|       pointer|
+|input_r_TVALID  |   in|    1|        axis|  input_r_V_dest_V|       pointer|
+|input_r_TREADY  |  out|    1|        axis|  input_r_V_dest_V|       pointer|
+|result          |  out|   32|      ap_vld|            result|       pointer|
+|result_ap_vld   |  out|    1|      ap_vld|            result|       pointer|
+|ap_clk          |   in|    1|  ap_ctrl_hs|         inference|  return value|
+|ap_rst_n        |   in|    1|  ap_ctrl_hs|         inference|  return value|
+|ap_start        |   in|    1|  ap_ctrl_hs|         inference|  return value|
+|ap_done         |  out|    1|  ap_ctrl_hs|         inference|  return value|
+|ap_ready        |  out|    1|  ap_ctrl_hs|         inference|  return value|
+|ap_idle         |  out|    1|  ap_ctrl_hs|         inference|  return value|
++----------------+-----+-----+------------+------------------+--------------+
+

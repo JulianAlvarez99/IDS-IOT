@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="myproject.cpp" path="/mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj/firmware/myproject.cpp"/>
+  </source>
+  <testbench>
+    <originFiles name="tb_data" path="/mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj/tb_data"/>
+    <originFiles name="weights" path="/mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj/firmware/weights"/>
+    <originFiles name="myproject_test.cpp" path="/mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj/myproject_test.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

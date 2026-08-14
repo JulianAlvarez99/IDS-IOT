@@ -1,0 +1,5 @@
+# This directory is a Syncthing folder marker.
+# Do not delete.
+
+folderID: rj2fh-mlstw
+created: 2026-06-15T18:56:35-03:00
