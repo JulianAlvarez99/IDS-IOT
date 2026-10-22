@@ -39,3 +39,13 @@ build/
 *.h5
 *.pkl
 Percentiles/
+
+# Manuales de referencia (pesados; el de Vitis HLS supera el límite de 100 MB de GitHub)
+docs/referencias/*.pdf
+
+vitis/
+vivado/
+embebido/
+models/
+data/
+

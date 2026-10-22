@@ -28,30 +28,30 @@ This repository presents an **end-to-end, hardware-accelerated, passive Intrusio
 ```mermaid
 flowchart TD
     subgraph DataPrep ["Stage 2: Statistical Profiling & Feature Selection"]
-        D1[CIC-IoT-2023 Dataset<br/>~22M Network Flows] --> D2[01_analisis_estadistico.ipynb<br/>EDA, Outliers & Class Distribution]
-        D2 --> D3[02_feature_importance_binario.ipynb<br/>XGBoost & SHAP Attribution]
-        D2 --> D4[03_feature_importance_multiclase.ipynb<br/>Multiclass Attack Profiling]
+        D1[CIC-IoT-2023 Dataset<br/>~22M Network Flows] --> D2[E2_01_analisis_estadistico.ipynb<br/>EDA, Outliers & Class Distribution]
+        D2 --> D3[E2_02_feature_importance_binario.ipynb<br/>XGBoost & SHAP Attribution]
+        D2 --> D4[E2_03_feature_importance_multiclase.ipynb<br/>Multiclass Attack Profiling]
         D3 --> FS[Optimal Feature Subset<br/>& Balanced Datasets]
     end
 
     subgraph DeepLearning ["Stage 3: Deep Learning & Architectural Optimization"]
-        FS --> M1[04_NAS_binary_model.ipynb<br/>Neural Architecture Search]
-        M1 --> M2[05_entrenamiento_binario.ipynb<br/>Baseline DNN Training]
-        M2 --> M3[05b_entrenamiento_binario_mejorado.ipynb<br/>Enhanced Architecture & LR Schedules]
-        M3 --> M4[05d_entrenamiento_binario_focal_loss.ipynb<br/>Focal Loss for Extreme Imbalance]
-        M4 --> M5[05c_analisis_errores_holdout.ipynb<br/>Holdout Generalization & Error Analysis]
-        M4 --> M6[06_simulador_tiempo_real.ipynb<br/>Throughput & Latency Simulation]
+        FS --> M1[E3_04_NAS_binary_model.ipynb<br/>Neural Architecture Search]
+        M1 --> M2[E3_05_entrenamiento_binario.ipynb<br/>Baseline DNN Training]
+        M2 --> M3[E3_05b_entrenamiento_binario_mejorado.ipynb<br/>Enhanced Architecture & LR Schedules]
+        M3 --> M4[E3_05d_entrenamiento_binario_focal_loss.ipynb<br/>Focal Loss for Extreme Imbalance]
+        M4 --> M5[E3_05c_analisis_errores_holdout.ipynb<br/>Holdout Generalization & Error Analysis]
+        M4 --> M6[E3_06_simulador_tiempo_real.ipynb<br/>Throughput & Latency Simulation]
     end
 
     subgraph Compression ["Stage 4: Edge Model Compression (TinyML)"]
-        M4 --> C1[07a_compresion_Pruning-QAT.ipynb<br/>Magnitude-based Pruning]
-        M4 --> C2[07b_compresion_Destillation.ipynb<br/>Teacher-Student Knowledge Distillation]
-        M4 --> C3[07c_compresion_PQAT.ipynb<br/>Joint Pruning + QKeras QAT]
-        C1 & C2 & C3 --> C4[07d_eval_compressed_model.ipynb<br/>Comparative Benchmarking on Holdout]
+        M4 --> C1[E4_07a_compresion_Pruning-QAT.ipynb<br/>Magnitude-based Pruning]
+        M4 --> C2[E4_07b_compresion_Destillation.ipynb<br/>Teacher-Student Knowledge Distillation]
+        M4 --> C3[E4_07c_compresion_PQAT.ipynb<br/>Joint Pruning + QKeras QAT]
+        C1 & C2 & C3 --> C4[E4_07d_eval_compressed_model.ipynb<br/>Comparative Benchmarking on Holdout]
     end
 
     subgraph HardwareHLS ["Stage 5: High-Level Synthesis & FPGA Deployment"]
-        C4 --> H1[05a_HLS4ML.ipynb<br/>hls4ml Profile & C-Simulation]
+        C4 --> H1[E5_05a_HLS4ML.ipynb<br/>hls4ml Profile & C-Simulation]
         H1 --> H2[Fixed-Point Optimization<br/>ap_fixed<16,6> / ap_fixed<8,2>]
         H2 --> H3[Vivado HLS Synthesis<br/>AXI-Stream DMA Engine]
         H3 --> H4[Xilinx PYNQ-Z2 Bitstream<br/>Hardware IP Core]
@@ -69,54 +69,28 @@ flowchart TD
 
 ```
 IDS-IOT/
-├── notebooks/
-│   ├── Etapa_2/               # Exploratory Data Analysis & Feature Selection
-│   │   ├── 01_analisis_estadistico.ipynb
-│   │   ├── 02_feature_importance_binario.ipynb
-│   │   ├── 03_feature_importance_multiclase.ipynb
-│   │   ├── Analisis de valores de features.png
-│   │   ├── Distribucion de clases CIC-IOT2023.png
-│   │   ├── SHAP_BarPlot_Binary.png
-│   │   ├── SHAP_Beeswarm_binary.png
-│   │   ├── estructura_arbol_0.png
-│   │   ├── xgb_modelo_binario.json
-│   │   └── Percentiles/
-│   ├── Etapa_3/               # Model Exploration, Training & Evaluation
-│   │   ├── 04_NAS_binary_model.ipynb
-│   │   ├── 05_entrenamiento_binario.ipynb
-│   │   ├── 05b_entrenamiento_binario_mejorado.ipynb
-│   │   ├── 05c_analisis_errores_holdout.ipynb
-│   │   ├── 05d_entrenamiento_binario_focal_loss.ipynb
-│   │   └── 06_simulador_tiempo_real.ipynb
-│   ├── Etapa_4/               # Model Compression (Pruning, QAT, Distillation, PQAT)
-│   │   ├── 07a_compresion_Pruning-QAT.ipynb
-│   │   ├── 07a_compresion_Pruning-QAT_corregido.ipynb
-│   │   ├── 07b_compresion_Destillation.ipynb
-│   │   ├── 07c_compresion_PQAT.ipynb
-│   │   └── 07d_eval_compressed_model.ipynb
-│   └── Etapa_5/               # Hardware High-Level Synthesis (HLS)
-│       ├── 05a_HLS4ML.ipynb
-│       ├── plotting.py
-│       └── hls_Prj/
+├── notebooks/                 # Jupyter notebooks, one folder per stage (E<N>_ prefix = stage)
+│   ├── Etapa_2/               # EDA & Feature Selection        (E2_01 … E2_03)
+│   ├── Etapa_3/               # Training & Evaluation          (E3_04 … E3_06)
+│   ├── Etapa_4/               # Model Compression              (E4_07a … E4_07d)
+│   ├── Etapa_5/               # High-Level Synthesis (hls4ml)  (E5_05a + plotting.py)
+│   │   └── docs/              #   Stage-5 guides: Vitis IP + PYNQ overlay, Vitis on Debian 13
+│   └── Etapa_6/               # PYNQ-Z2 bring-up               (E6_08a)
+│       └── docs/              #   Stage-6 guide: AND gate in the PL
+├── data/                      # Datasets (Feather): dataset_eda_temp, df_binary_balanced, test_real_traffic
+├── models/                    # Trained weights (.h5), scalers (.pkl), architectures (.json), xgboost/
+├── figuras/                   # All images & plots, by stage — README lists the notebook that made each one
+├── vitis/                     # Vitis HLS 2022.2 implementations
+│   ├── hls4ml/                #   hls4ml firmware: pynq_modelo_estudiante_destilado_qat_prj
+│   └── ids_axi/               #   AXI wrapper IP: src/, scripts/, ids_axi_prj/, ip/
+├── vivado/                    # Vivado 2022.2 implementations
+│   ├── and_gate_pynqz2/       #   AND-gate test design (src, constraints, Tcl, and_gate_prk/)
+│   └── ids_overlay/           #   IDS block design (constraints, build_overlay.tcl, project_ids/)
+├── embebido/                  # Files deployed to the PYNQ-Z2 (.bit/.hwh, board drivers)
+│   ├── and_gate/
+│   └── ids_overlay/
+├── docs/                      # General project documentation (+ referencias/ manuals)
 ├── enviroments/               # Cross-Platform Conda Environments
-│   ├── environment.yml
-│   ├── environment_hpc.yml
-│   ├── environment_linux.yml
-│   ├── verificar_entorno.py
-│   └── README.md
-├── models/                    # Exported Weights, Checkpoints & Visual Topology
-│   ├── 51epochs_128batch/
-│   ├── 71epochs_64batch/
-│   ├── 92epochs_32batch/
-│   ├── Destillation_15epochs_128batch/
-│   ├── PQAT_15epochs_128batch/
-│   ├── QAT_15epochs_128batch/
-│   ├── mlp_v2/
-│   └── arquitectura_ganadora_binario.png
-├── data/                      # Dataset Storage (Feather Serialized Formats)
-│   ├── dataset_eda_temp.feather
-│   ├── df_binary_balanced.feather
-│   └── test_real_traffic.feather
 ├── artifacts/                 # Serialized Artifacts & Encoders
 └── README.md                  # Project Master Documentation
 ```
@@ -128,43 +102,60 @@ IDS-IOT/
 ### 1. `notebooks/Etapa_2/` — Statistical Characterization & Feature Selection
 | File | Scientific Objective & Methodology | Primary Outputs / Artifacts |
 |---|---|---|
-| [`01_analisis_estadistico.ipynb`](file:///c:/Users/julia/OneDrive/Desktop/IDS-IOT/notebooks/Etapa_2/01_analisis_estadistico.ipynb) | Exploratory Data Analysis (EDA) of the raw CIC-IoT-2023 dataset. Evaluates 47+ features across ~22M flows, detecting nulls, infinite values, skewed distributions, and inter-feature Pearson correlations. | Distribution plots, percentile distributions, data sanitization specs. |
-| [`02_feature_importance_binario.ipynb`](file:///c:/Users/julia/OneDrive/Desktop/IDS-IOT/notebooks/Etapa_2/02_feature_importance_binario.ipynb) | Tree-based feature importance ranking for binary classification (Benign vs. Attack). Trains an optimized XGBoost model and applies **SHAP (SHapley Additive exPlanations)** to isolate key hardware-friendly features. | `xgb_modelo_binario.json`, `SHAP_BarPlot_Binary.png`, `SHAP_Beeswarm_binary.png`. |
-| [`03_feature_importance_multiclase.ipynb`](file:///c:/Users/julia/OneDrive/Desktop/IDS-IOT/notebooks/Etapa_2/03_feature_importance_multiclase.ipynb) | Multiclass feature ranking identifying discriminative features capable of differentiating specific attack taxonomies (DDoS, DoS, Recon, Web, BruteForce, Spoofing, Mirai). | Multiclass importance matrices and attack-specific feature signatures. |
+| [`E2_01_analisis_estadistico.ipynb`](notebooks/Etapa_2/E2_01_analisis_estadistico.ipynb) | Exploratory Data Analysis (EDA) of the raw CIC-IoT-2023 dataset. Evaluates 47+ features across ~22M flows, detecting nulls, infinite values, skewed distributions, and inter-feature Pearson correlations. | Distribution plots, percentile distributions, data sanitization specs. |
+| [`E2_02_feature_importance_binario.ipynb`](notebooks/Etapa_2/E2_02_feature_importance_binario.ipynb) | Tree-based feature importance ranking for binary classification (Benign vs. Attack). Trains an optimized XGBoost model and applies **SHAP (SHapley Additive exPlanations)** to isolate key hardware-friendly features. | `xgb_modelo_binario.json`, `SHAP_BarPlot_Binary.png`, `SHAP_Beeswarm_binary.png`. |
+| [`E2_03_feature_importance_multiclase.ipynb`](notebooks/Etapa_2/E2_03_feature_importance_multiclase.ipynb) | Multiclass feature ranking identifying discriminative features capable of differentiating specific attack taxonomies (DDoS, DoS, Recon, Web, BruteForce, Spoofing, Mirai). | Multiclass importance matrices and attack-specific feature signatures. |
 
 ### 2. `notebooks/Etapa_3/` — Deep Learning Modeling & Architectural Optimization
 | File | Scientific Objective & Methodology | Primary Outputs / Artifacts |
 |---|---|---|
-| [`04_NAS_binary_model.ipynb`](file:///c:/Users/julia/OneDrive/Desktop/IDS-IOT/notebooks/Etapa_3/04_NAS_binary_model.ipynb) | Constrained Neural Architecture Search (NAS) evaluating layer depths, neuron widths, activation functions, and parameter count trade-offs suitable for FPGA BRAM/DSP limits. | `arquitectura_ganadora_binario.png`, optimal DNN baseline topology. |
-| [`05_entrenamiento_binario.ipynb`](file:///c:/Users/julia/OneDrive/Desktop/IDS-IOT/notebooks/Etapa_3/05_entrenamiento_binario.ipynb) | Baseline training of the selected DNN model on balanced network traffic partitions (`df_binary_balanced.feather`). | Initial model checkpoints (`51epochs_128batch`, `71epochs_64batch`, etc.). |
-| [`05b_entrenamiento_binario_mejorado.ipynb`](file:///c:/Users/julia/OneDrive/Desktop/IDS-IOT/notebooks/Etapa_3/05b_entrenamiento_binario_mejorado.ipynb) | Hyperparameter tuning and architecture refinement utilizing batch normalization, dropout, Cosine Annealing/ReduceLROnPlateau learning schedules. | Improved baseline model (`mlp_v2`). |
-| [`05c_analisis_errores_holdout.ipynb`](file:///c:/Users/julia/OneDrive/Desktop/IDS-IOT/notebooks/Etapa_3/05c_analisis_errores_holdout.ipynb) | Holdout validation on unseen, natural (unbalanced) traffic (`test_real_traffic.feather`). Evaluates ROC-AUC, PR-AUC, False Positive Rate (FPR), and decision threshold sensitivity. | Confusion matrices, threshold calibration curves, per-class error reports. |
-| [`05d_entrenamiento_binario_focal_loss.ipynb`](file:///c:/Users/julia/OneDrive/Desktop/IDS-IOT/notebooks/Etapa_3/05d_entrenamiento_binario_focal_loss.ipynb) | Training with **Binary Focal Loss** ($\alpha=0.25, \gamma=2.0$) to mitigate class imbalance and focus gradients on hard-to-classify edge samples. | Robust teacher model with suppressed false alarms. |
-| [`06_simulador_tiempo_real.ipynb`](file:///c:/Users/julia/OneDrive/Desktop/IDS-IOT/notebooks/Etapa_3/06_simulador_tiempo_real.ipynb) | Real-time traffic stream simulation testing batch inference throughput, per-packet classification latency, and memory consumption. | Latency vs. batch size benchmarks in software execution. |
+| [`E3_04_NAS_binary_model.ipynb`](notebooks/Etapa_3/E3_04_NAS_binary_model.ipynb) | Constrained Neural Architecture Search (NAS) evaluating layer depths, neuron widths, activation functions, and parameter count trade-offs suitable for FPGA BRAM/DSP limits. | `arquitectura_ganadora_binario.png`, optimal DNN baseline topology. |
+| [`E3_05_entrenamiento_binario.ipynb`](notebooks/Etapa_3/E3_05_entrenamiento_binario.ipynb) | Baseline training of the selected DNN model on balanced network traffic partitions (`df_binary_balanced.feather`). | Initial model checkpoints (`51epochs_128batch`, `71epochs_64batch`, etc.). |
+| [`E3_05b_entrenamiento_binario_mejorado.ipynb`](notebooks/Etapa_3/E3_05b_entrenamiento_binario_mejorado.ipynb) | Hyperparameter tuning and architecture refinement utilizing batch normalization, dropout, Cosine Annealing/ReduceLROnPlateau learning schedules. | Improved baseline model (`mlp_v2`). |
+| [`E3_05c_analisis_errores_holdout.ipynb`](notebooks/Etapa_3/E3_05c_analisis_errores_holdout.ipynb) | Holdout validation on unseen, natural (unbalanced) traffic (`test_real_traffic.feather`). Evaluates ROC-AUC, PR-AUC, False Positive Rate (FPR), and decision threshold sensitivity. | Confusion matrices, threshold calibration curves, per-class error reports. |
+| [`E3_05d_entrenamiento_binario_focal_loss.ipynb`](notebooks/Etapa_3/E3_05d_entrenamiento_binario_focal_loss.ipynb) | Training with **Binary Focal Loss** ($\alpha=0.25, \gamma=2.0$) to mitigate class imbalance and focus gradients on hard-to-classify edge samples. | Robust teacher model with suppressed false alarms. |
+| [`E3_06_simulador_tiempo_real.ipynb`](notebooks/Etapa_3/E3_06_simulador_tiempo_real.ipynb) | Real-time traffic stream simulation testing batch inference throughput, per-packet classification latency, and memory consumption. | Latency vs. batch size benchmarks in software execution. |
 
 ### 3. `notebooks/Etapa_4/` — Edge Compression (TinyML)
 | File | Scientific Objective & Methodology | Primary Outputs / Artifacts |
 |---|---|---|
-| [`07a_compresion_Pruning-QAT.ipynb`](file:///c:/Users/julia/OneDrive/Desktop/IDS-IOT/notebooks/Etapa_4/07a_compresion_Pruning-QAT.ipynb) / `_corregido` | Magnitude-based weight pruning enforcing 50%–70% sparsity combined with Quantization-Aware Training using TensorFlow Model Optimization (TF-MOT). | `QAT_15epochs_128batch/` compressed weights. |
-| [`07b_compresion_Destillation.ipynb`](file:///c:/Users/julia/OneDrive/Desktop/IDS-IOT/notebooks/Etapa_4/07b_compresion_Destillation.ipynb) | Knowledge Distillation (KD) transferring logits from the high-capacity teacher network to an ultra-compact student model ($< 5\text{k}$ parameters). | `Destillation_15epochs_128batch/` student model. |
-| [`07c_compresion_PQAT.ipynb`](file:///c:/Users/julia/OneDrive/Desktop/IDS-IOT/notebooks/Etapa_4/07c_compresion_PQAT.ipynb) | Simultaneous **Pruning + Quantization-Aware Training (PQAT)** using **QKeras** and custom Focal Loss, quantizing weights (`quantized_bits(8,2)`) and activations (`quantized_relu(8,2)`). | `PQAT_15epochs_128batch/` hardware-ready QModel. |
-| [`07d_eval_compressed_model.ipynb`](file:///c:/Users/julia/OneDrive/Desktop/IDS-IOT/notebooks/Etapa_4/07d_eval_compressed_model.ipynb) | Rigorous comparative benchmark comparing Float32 baseline vs. Pruned vs. QAT vs. Distilled vs. PQAT on natural test traffic (`test_real_traffic.feather`). | Comprehensive metrics table (Accuracy, Precision, Recall, F1, Sparsity, Compression Ratio). |
+| [`E4_07a_compresion_Pruning-QAT.ipynb`](notebooks/Etapa_4/E4_07a_compresion_Pruning-QAT.ipynb) / `_corregido` | Magnitude-based weight pruning enforcing 50%–70% sparsity combined with Quantization-Aware Training using TensorFlow Model Optimization (TF-MOT). | `QAT_15epochs_128batch/` compressed weights. |
+| [`E4_07b_compresion_Destillation.ipynb`](notebooks/Etapa_4/E4_07b_compresion_Destillation.ipynb) | Knowledge Distillation (KD) transferring logits from the high-capacity teacher network to an ultra-compact student model ($< 5\text{k}$ parameters). | `Destillation_15epochs_128batch/` student model. |
+| [`E4_07c_compresion_PQAT.ipynb`](notebooks/Etapa_4/E4_07c_compresion_PQAT.ipynb) | Simultaneous **Pruning + Quantization-Aware Training (PQAT)** using **QKeras** and custom Focal Loss, quantizing weights (`quantized_bits(8,2)`) and activations (`quantized_relu(8,2)`). | `PQAT_15epochs_128batch/` hardware-ready QModel. |
+| [`E4_07d_eval_compressed_model.ipynb`](notebooks/Etapa_4/E4_07d_eval_compressed_model.ipynb) | Rigorous comparative benchmark comparing Float32 baseline vs. Pruned vs. QAT vs. Distilled vs. PQAT on natural test traffic (`test_real_traffic.feather`). | Comprehensive metrics table (Accuracy, Precision, Recall, F1, Sparsity, Compression Ratio). |
 
 ### 4. `notebooks/Etapa_5/` — High-Level Synthesis (HLS) & Hardware IP
 | File | Scientific Objective & Methodology | Primary Outputs / Artifacts |
 |---|---|---|
-| [`05a_HLS4ML.ipynb`](file:///c:/Users/julia/OneDrive/Desktop/IDS-IOT/notebooks/Etapa_5/05a_HLS4ML.ipynb) | Full HLS pipeline using `hls4ml`. Converts the QKeras PQAT model into C++ HLS firmware, configures AXI-Stream interfaces (`io_stream`), sets parallelization reuse factors (Reuse Factor = 64), runs C-simulation, and invokes Vivado HLS for RTL synthesis. | Synthesized VHDL/Verilog RTL, Vivado IP Core (`.zip`), C-Simulation validation reports. |
-| [`plotting.py`](file:///c:/Users/julia/OneDrive/Desktop/IDS-IOT/notebooks/Etapa_5/plotting.py) | Utility module for visualizing precision profiling and layer-by-layer quantization errors during HLS conversion. | Precision profiling figures. |
-| `hls_Prj/` | Complete Xilinx Vivado HLS project workspace containing generated C++ kernels, TCL synthesis scripts, testbench drivers, and exported IP blocks. | Vivado HLS hardware project. |
+| [`E5_05a_HLS4ML.ipynb`](notebooks/Etapa_5/E5_05a_HLS4ML.ipynb) | Full HLS pipeline using `hls4ml`. Converts the QKeras PQAT model into C++ HLS firmware, configures AXI-Stream interfaces (`io_stream`), sets parallelization reuse factors (Reuse Factor = 64), runs C-simulation, and invokes Vivado HLS for RTL synthesis. | Synthesized VHDL/Verilog RTL, Vivado IP Core (`.zip`), C-Simulation validation reports. |
+| [`plotting.py`](notebooks/Etapa_5/plotting.py) | Utility module for visualizing precision profiling and layer-by-layer quantization errors during HLS conversion. | Precision profiling figures. |
+| [`docs/ip_core_vitis_y_overlay_pynq.md`](notebooks/Etapa_5/docs/ip_core_vitis_y_overlay_pynq.md) | Step-by-step guide: hls4ml firmware → `ids_axi` IP in Vitis HLS → Vivado block design → PYNQ overlay. | — |
+| [`docs/entorno_vitis_debian13.md`](notebooks/Etapa_5/docs/entorno_vitis_debian13.md) | The four environment fixes Vitis HLS 2022.2 needs on Debian 13. | — |
 
-### 5. `enviroments/` — Cross-Platform Environment Configurations
+The notebook writes the hls4ml firmware to [`vitis/hls4ml/`](vitis/hls4ml/) (wiped and regenerated on every run).
+
+### 5. `notebooks/Etapa_6/` — PYNQ-Z2 Bring-up
+| File | Scientific Objective & Methodology | Primary Outputs / Artifacts |
+|---|---|---|
+| [`E6_08a_pynq_z2_primeros_pasos.ipynb`](notebooks/Etapa_6/E6_08a_pynq_z2_primeros_pasos.ipynb) | First steps on the board: Jupyter, base overlay, loading custom bitstreams. | — |
+| [`docs/and_gate_pynqz2.md`](notebooks/Etapa_6/docs/and_gate_pynqz2.md) | Minimal PL-only design (AND gate) validating the Vivado → `.bit` + `.hwh` → PYNQ flow. | `embebido/and_gate/` |
+
+### 6. Hardware — `vitis/`, `vivado/`, `embebido/`
+| Folder | Content |
+|---|---|
+| [`vitis/`](vitis/README.md) | Vitis HLS 2022.2 projects: `hls4ml/` (generated network firmware) and `ids_axi/` (AXI wrapper, `build_ip.tcl`, exported IP in `ip/`). |
+| [`vivado/`](vivado/README.md) | Vivado 2022.2 projects: `and_gate_pynqz2/` (test design) and `ids_overlay/` (Zynq PS + AXI DMA + `ids_axi` block design). |
+| [`embebido/`](embebido/README.md) | What goes to the board: `.bit`/`.hwh` pairs and the board-side Python (`ids_driver.py`, `ids_server.py`), plus the PC-side `host_sender.py`. |
+| [`figuras/`](figuras/README.md) | Every image and plot, grouped by stage, with the notebook it comes from. |
+
+### 7. `enviroments/` — Cross-Platform Environment Configurations
 | File | Description & Purpose |
 |---|---|
-| [`environment.yml`](file:///c:/Users/julia/OneDrive/Desktop/IDS-IOT/enviroments/environment.yml) | Conda specification for local workstation development on Windows (CPU-only, Python 3.11, TensorFlow 2.14.0, QKeras, pyarrow). |
-| [`environment_hpc.yml`](file:///c:/Users/julia/OneDrive/Desktop/IDS-IOT/enviroments/environment_hpc.yml) | Conda specification for High-Performance Computing (HPC) Linux servers with NVIDIA GPU acceleration (CUDA 11.8 / cuDNN 8.6). |
-| [`environment_linux.yml`](file:///c:/Users/julia/OneDrive/Desktop/IDS-IOT/enviroments/environment_linux.yml) | Standard Linux GPU environment definition. |
-| [`verificar_entorno.py`](file:///c:/Users/julia/OneDrive/Desktop/IDS-IOT/enviroments/verificar_entorno.py) | Automated sanity-check script validating package versions, Keras 2 compatibility, and GPU availability. |
-| [`README.md`](file:///c:/Users/julia/OneDrive/Desktop/IDS-IOT/enviroments/README.md) | Detailed documentation on environment setup, version rationale, and KaggleHub configuration. |
+| [`environment.yml`](enviroments/environment.yml) | Conda specification for local workstation development on Windows (CPU-only, Python 3.11, TensorFlow 2.14.0, QKeras, pyarrow). |
+| [`environment_hpc.yml`](enviroments/environment_hpc.yml) | Conda specification for High-Performance Computing (HPC) Linux servers with NVIDIA GPU acceleration (CUDA 11.8 / cuDNN 8.6). |
+| [`environment_linux.yml`](enviroments/environment_linux.yml) | Standard Linux GPU environment definition. |
+| [`verificar_entorno.py`](enviroments/verificar_entorno.py) | Automated sanity-check script validating package versions, Keras 2 compatibility, and GPU availability. |
+| [`README.md`](enviroments/README.md) | Detailed documentation on environment setup, version rationale, and KaggleHub configuration. |
 
 ---
 

@@ -1,17 +1,78 @@
 Backend: Vitis
-ClockPeriod: 5
+ClockPeriod: 10.0
 HLSConfig:
+  LayerName:
+    batch_normalization:
+      Precision:
+        bias: fixed<16,6>
+        result: fixed<16,6>
+        scale: fixed<16,6>
+      Trace: false
+    batch_normalization_1:
+      Precision:
+        bias: fixed<16,6>
+        result: fixed<16,6>
+        scale: fixed<16,6>
+      Trace: false
+    output:
+      Precision:
+        accum: ap_fixed<18,10,AP_RND,AP_SAT>
+        bias: fixed<16,6>
+        result: fixed<16,6>
+        weight: fixed<8,3>
+      ReuseFactor: 16
+      Trace: false
+    output_sigmoid:
+      Precision:
+        result: ap_fixed<16,6,AP_RND,AP_SAT>
+      Trace: false
+    q_activation:
+      Precision:
+        result: ufixed<4,0,RND_CONV,SAT>
+      Trace: false
+    q_activation_1:
+      Precision:
+        result: ufixed<4,0,RND_CONV,SAT>
+      Trace: false
+    qdense_1:
+      Precision:
+        accum: ap_fixed<18,10,AP_RND,AP_SAT>
+        bias: fixed<16,6>
+        result: fixed<16,6>
+        weight: fixed<8,3>
+      ReuseFactor: 36
+      Trace: false
+    qdense_1_input:
+      Precision:
+        result: ap_fixed<16,6,AP_RND,AP_SAT>
+      Trace: false
+    qdense_1_linear:
+      Precision:
+        result: fixed<16,6>
+      Trace: false
+    qdense_2:
+      Precision:
+        accum: ap_fixed<18,10,AP_RND,AP_SAT>
+        bias: fixed<16,6>
+        result: fixed<16,6>
+        weight: fixed<8,3>
+      ReuseFactor: 32
+      Trace: false
+    qdense_2_linear:
+      Precision:
+        result: fixed<16,6>
+      Trace: false
   Model:
     BramFactor: 1000000000
-    Precision: ap_fixed<8,2>
-    ReuseFactor: 64
+    Precision: ap_fixed<16,6,AP_RND,AP_SAT>
+    ReuseFactor: 1
     Strategy: Resource
     TraceOutput: false
 IOType: io_stream
 InputData: null
-KerasModel: !keras_model 'hls_Prj/pynq_modelo_estudiante_destilado_qat_prj/keras_model.h5'
-OutputDir: hls_Prj/pynq_modelo_estudiante_destilado_qat_prj
+KerasModel: !keras_model '/mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj/keras_model.h5'
+OutputDir: /mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj
 OutputPredictions: null
 Part: xc7z020clg400-1
 ProjectName: myproject
-Stamp: 90BAA5Ac
+Stamp: c09477Fb

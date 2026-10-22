@@ -19,24 +19,33 @@
 #define N_LAYER_10 1
 
 // hls-fpga-machine-learning insert layer-precision
-typedef nnet::array<ap_fixed<8,2>, 18*1> input_t;
-typedef ap_fixed<8,2> model_default_t;
-typedef nnet::array<ap_fixed<8,2>, 32*1> layer2_t;
+typedef nnet::array<ap_fixed<16,6,AP_RND,AP_SAT>, 18*1> input_t;
+typedef ap_fixed<18,10,AP_RND,AP_SAT> qdense_1_accum_t;
+typedef nnet::array<ap_fixed<16,6>, 32*1> layer2_t;
 typedef ap_fixed<8,3> weight2_t;
+typedef ap_fixed<16,6> qdense_1_bias_t;
 typedef ap_uint<1> layer2_index;
-typedef nnet::array<ap_fixed<8,2>, 32*1> layer4_t;
-typedef nnet::array<ap_fixed<8,2>, 32*1> layer5_t;
+typedef nnet::array<ap_fixed<16,6>, 32*1> layer4_t;
+typedef ap_fixed<16,6> batch_normalization_scale_t;
+typedef ap_fixed<16,6> batch_normalization_bias_t;
+typedef nnet::array<ap_ufixed<4,0,AP_RND_CONV,AP_SAT>, 32*1> layer5_t;
 typedef ap_fixed<18,8> q_activation_table_t;
-typedef nnet::array<ap_fixed<8,2>, 16*1> layer6_t;
+typedef ap_fixed<18,10,AP_RND,AP_SAT> qdense_2_accum_t;
+typedef nnet::array<ap_fixed<16,6>, 16*1> layer6_t;
 typedef ap_fixed<8,3> weight6_t;
+typedef ap_fixed<16,6> qdense_2_bias_t;
 typedef ap_uint<1> layer6_index;
-typedef nnet::array<ap_fixed<8,2>, 16*1> layer8_t;
-typedef nnet::array<ap_fixed<8,2>, 16*1> layer9_t;
+typedef nnet::array<ap_fixed<16,6>, 16*1> layer8_t;
+typedef ap_fixed<16,6> batch_normalization_1_scale_t;
+typedef ap_fixed<16,6> batch_normalization_1_bias_t;
+typedef nnet::array<ap_ufixed<4,0,AP_RND_CONV,AP_SAT>, 16*1> layer9_t;
 typedef ap_fixed<18,8> q_activation_1_table_t;
-typedef nnet::array<ap_fixed<8,2>, 1*1> layer10_t;
+typedef ap_fixed<18,10,AP_RND,AP_SAT> output_accum_t;
+typedef nnet::array<ap_fixed<16,6>, 1*1> layer10_t;
 typedef ap_fixed<8,3> weight10_t;
+typedef ap_fixed<16,6> output_bias_t;
 typedef ap_uint<1> layer10_index;
-typedef nnet::array<ap_fixed<8,2>, 1*1> result_t;
+typedef nnet::array<ap_fixed<16,6,AP_RND,AP_SAT>, 1*1> result_t;
 typedef ap_fixed<18,8> output_sigmoid_table_t;
 
 #endif

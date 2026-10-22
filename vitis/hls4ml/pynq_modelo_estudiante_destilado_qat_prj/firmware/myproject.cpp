@@ -17,15 +17,15 @@ void myproject(
     if (!loaded_weights) {
         // hls-fpga-machine-learning insert load weights
         nnet::load_weights_from_txt<weight2_t, 576>(w2, "w2.txt");
-        nnet::load_weights_from_txt<model_default_t, 32>(b2, "b2.txt");
-        nnet::load_weights_from_txt<model_default_t, 32>(s4, "s4.txt");
-        nnet::load_weights_from_txt<model_default_t, 32>(b4, "b4.txt");
+        nnet::load_weights_from_txt<qdense_1_bias_t, 32>(b2, "b2.txt");
+        nnet::load_weights_from_txt<batch_normalization_scale_t, 32>(s4, "s4.txt");
+        nnet::load_weights_from_txt<batch_normalization_bias_t, 32>(b4, "b4.txt");
         nnet::load_weights_from_txt<weight6_t, 512>(w6, "w6.txt");
-        nnet::load_weights_from_txt<model_default_t, 16>(b6, "b6.txt");
-        nnet::load_weights_from_txt<model_default_t, 16>(s8, "s8.txt");
-        nnet::load_weights_from_txt<model_default_t, 16>(b8, "b8.txt");
+        nnet::load_weights_from_txt<qdense_2_bias_t, 16>(b6, "b6.txt");
+        nnet::load_weights_from_txt<batch_normalization_1_scale_t, 16>(s8, "s8.txt");
+        nnet::load_weights_from_txt<batch_normalization_1_bias_t, 16>(b8, "b8.txt");
         nnet::load_weights_from_txt<weight10_t, 16>(w10, "w10.txt");
-        nnet::load_weights_from_txt<model_default_t, 1>(b10, "b10.txt");
+        nnet::load_weights_from_txt<output_bias_t, 1>(b10, "b10.txt");
         loaded_weights = true;
     }
 #endif
@@ -66,49 +66,4 @@ void myproject(
 
     nnet::sigmoid<layer10_t, result_t, sigmoid_config11>(layer10_out, layer11_out); // output_sigmoid
 
-}
-// =========================================================
-// WRAPPER AXI STREAM PARA INTEGRACIÓN CON PYNQ-Z2 DMA
-// =========================================================
-void inference(hls::stream<axis_int_t>& input, int *result) {
-    #pragma HLS INTERFACE mode=ap_ctrl_hs port=return
-    #pragma HLS INTERFACE axis register both port=input
-    #pragma HLS INTERFACE ap_vld port=result register
-    #pragma HLS DATAFLOW
-
-    // Streams internos para conectar con el modelo de hls4ml
-    hls::stream<input_t> internal_input("internal_input");
-    hls::stream<result_t> internal_output("internal_output");
-
-    input_t features_in;
-
-    // 1. Desempaquetar AXI Stream y convertir Float a ap_fixed
-    for(int h = 0; h < N_INPUT_1_1; h++) {
-        #pragma HLS PIPELINE
-        axis_int_t val = input.read();
-
-        // Unión mágica para reinterpretar los bits de Python (float) sin corromperlos
-        union {
-            unsigned int i;
-            float f;
-        } converter;
-
-        converter.i = val.data;
-        features_in[h] = converter.f;
-    }
-
-    internal_input.write(features_in);
-
-    // 2. Ejecutar la Inferencia (Tu modelo MLP)
-    myproject(internal_input, internal_output);
-
-    // 3. Empaquetar Salida y tomar decisión (IDS Binario)
-    result_t out_data = internal_output.read();
-
-    // Asumiendo que la salida Sigmoide > 0.5 es un ataque
-    if(out_data[0] > 0.5) {
-        *result = 1; // Tráfico Malicioso
-    } else {
-        *result = 0; // Tráfico Legítimo
-    }
 }

@@ -16,7 +16,7 @@ namespace nnet {
 #ifndef __SYNTHESIS__
 
 #ifndef WEIGHTS_DIR
-#define WEIGHTS_DIR "weights"
+#define WEIGHTS_DIR "/mnt/Datos/Julian_Alvarez-TFG/IDS-IOT/notebooks/Etapa_5/hls_Prj/pynq_modelo_estudiante_destilado_qat_prj/firmware/weights"
 #endif
 
 template <class T, size_t SIZE> void load_weights_from_txt(T *w, const char *fname) {

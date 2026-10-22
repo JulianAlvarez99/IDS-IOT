@@ -1,47 +1,108 @@
+#include <algorithm>
+#include <fstream>
 #include <iostream>
+#include <map>
+#include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <vector>
+
 #include "firmware/myproject.h"
+#include "firmware/nnet_utils/nnet_helpers.h"
 
-int main() {
-    // Vector de prueba emulando un paquete de red (18 características extraídas con SHAP)
-    // Valores de ejemplo. Puedes poner los valores normalizados de una fila de tu dataset.
-    float network_packet[N_INPUT_1_1] = {
-        0.15, 0.02, 1.34, 0.00, 0.88, 0.12, 0.00, 0.00, 1.05,
-        2.13, 0.01, 0.00, 0.00, 0.45, 0.00, 1.12, 0.33, 0.05
-    };
+// hls-fpga-machine-learning insert bram
 
-    hls::stream<axis_int_t> in_stream;
-    int inferenceResult;
+#define CHECKPOINT 5000
 
-    // Cargar el stream simulando el envío del DMA desde Python
-    for(int i = 0; i < N_INPUT_1_1; i++) {
-        axis_int_t val;
+namespace nnet {
+bool trace_enabled = true;
+std::map<std::string, void *> *trace_outputs = NULL;
+size_t trace_type_size = sizeof(double);
+} // namespace nnet
 
-        union {
-            unsigned int i;
-            float f;
-        } converter;
+int main(int argc, char **argv) {
+    // load input data from text file
+    std::ifstream fin("tb_data/tb_input_features.dat");
+    // load predictions from text file
+    std::ifstream fpr("tb_data/tb_output_predictions.dat");
 
-        converter.f = network_packet[i];
-        val.data = converter.i;
+#ifdef RTL_SIM
+    std::string RESULTS_LOG = "tb_data/rtl_cosim_results.log";
+#else
+    std::string RESULTS_LOG = "tb_data/csim_results.log";
+#endif
+    std::ofstream fout(RESULTS_LOG);
 
-        val.last = (i == N_INPUT_1_1 - 1) ? 1 : 0;
-        val.keep = 1; val.strb = 1; val.user = 1; val.id = 0; val.dest = 0;
+    std::string iline;
+    std::string pline;
+    int e = 0;
 
-        in_stream << val;
-    }
+    if (fin.is_open() && fpr.is_open()) {
+        while (std::getline(fin, iline) && std::getline(fpr, pline)) {
+            if (e % CHECKPOINT == 0)
+                std::cout << "Processing input " << e << std::endl;
+            char *cstr = const_cast<char *>(iline.c_str());
+            char *current;
+            std::vector<float> in;
+            current = strtok(cstr, " ");
+            while (current != NULL) {
+                in.push_back(atof(current));
+                current = strtok(NULL, " ");
+            }
+            cstr = const_cast<char *>(pline.c_str());
+            std::vector<float> pr;
+            current = strtok(cstr, " ");
+            while (current != NULL) {
+                pr.push_back(atof(current));
+                current = strtok(NULL, " ");
+            }
 
-    std::cout << "--- Iniciando Inferencia de Tráfico IoT ---" << std::endl;
+            // hls-fpga-machine-learning insert data
+      hls::stream<input_t> qdense_1_input("qdense_1_input");
+      nnet::copy_data<float, input_t, 0, N_INPUT_1_1>(in, qdense_1_input);
+      hls::stream<result_t> layer11_out("layer11_out");
 
-    // Ejecutar Bloque IP
-    inference(in_stream, &inferenceResult);
+            // hls-fpga-machine-learning insert top-level-function
+            myproject(qdense_1_input,layer11_out);
 
-    std::cout << "Predicción del Modelo: ";
-    if(inferenceResult == 1) {
-        std::cout << "[1] ALERTA: Tráfico Malicioso Detectado!" << std::endl;
+            if (e % CHECKPOINT == 0) {
+                std::cout << "Predictions" << std::endl;
+                // hls-fpga-machine-learning insert predictions
+                for(int i = 0; i < N_LAYER_10; i++) {
+                  std::cout << pr[i] << " ";
+                }
+                std::cout << std::endl;
+                std::cout << "Quantized predictions" << std::endl;
+                // hls-fpga-machine-learning insert quantized
+                nnet::print_result<result_t, N_LAYER_10>(layer11_out, std::cout, true);
+            }
+            e++;
+
+            // hls-fpga-machine-learning insert tb-output
+            nnet::print_result<result_t, N_LAYER_10>(layer11_out, fout);
+        }
+        fin.close();
+        fpr.close();
     } else {
-        std::cout << "[0] Tráfico Legítimo." << std::endl;
+        std::cout << "INFO: Unable to open input/predictions file, using default input." << std::endl;
+
+        // hls-fpga-machine-learning insert zero
+    hls::stream<input_t> qdense_1_input("qdense_1_input");
+    nnet::fill_zero<input_t, N_INPUT_1_1>(qdense_1_input);
+    hls::stream<result_t> layer11_out("layer11_out");
+
+        // hls-fpga-machine-learning insert top-level-function
+        myproject(qdense_1_input,layer11_out);
+
+        // hls-fpga-machine-learning insert output
+        nnet::print_result<result_t, N_LAYER_10>(layer11_out, std::cout, true);
+
+        // hls-fpga-machine-learning insert tb-output
+        nnet::print_result<result_t, N_LAYER_10>(layer11_out, fout);
     }
-    std::cout << "-------------------------------------------" << std::endl;
+
+    fout.close();
+    std::cout << "INFO: Saved inference results to file: " << RESULTS_LOG << std::endl;
 
     return 0;
 }

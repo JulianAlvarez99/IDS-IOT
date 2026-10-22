@@ -7,9 +7,9 @@
 #define B10_H_
 
 #ifndef __SYNTHESIS__
-model_default_t b10[1];
+output_bias_t b10[1];
 #else
-model_default_t b10[1] = {0.534458};
+output_bias_t b10[1] = {0.5344580412};
 #endif
 
 #endif
